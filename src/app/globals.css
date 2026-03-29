@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f4f7fb;
+  --foreground: #111827;
+  --muted: #5f6b7a;
+  --accent: #6172f3;
+  --accent-strong: #4d5dde;
+}
+
+.dark {
+  --background: #090f1e;
+  --foreground: #f3f6fd;
+  --muted: #9aa6bf;
+  --accent: #7a89ff;
+  --accent-strong: #8e9cff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(97, 114, 243, 0.11), transparent 32%),
+    radial-gradient(circle at right top, rgba(17, 24, 39, 0.05), transparent 28%),
+    var(--background);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at center, black 28%, transparent 88%);
+}
+
+::selection {
+  background: rgba(97, 114, 243, 0.22);
+  color: var(--foreground);
+}
+
+@layer base {
+  * {
+    @apply border-black/5;
+  }
+
+  a,
+  button {
+    @apply transition duration-200;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 md:px-6;
+  }
+
+  .surface {
+    @apply rounded-[32px] border border-black/8 bg-white/78 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.045] dark:shadow-[0_20px_60px_rgba(2,6,23,0.36)];
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border border-black/8 bg-black/[0.025] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted dark:border-white/10 dark:bg-white/[0.04];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(97,114,243,0.25)] transition hover:bg-accent-strong focus:outline-none focus:ring-4 focus:ring-accent/20;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-black/10 bg-white/70 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent/40 hover:text-accent focus:outline-none focus:ring-4 focus:ring-accent/10 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-accent/45 dark:hover:text-white;
+  }
+
+  .font-display {
+    font-family: var(--font-display), var(--font-body), sans-serif;
+    letter-spacing: -0.035em;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .fade-up {
+    animation: fade-up 0.75s ease-out both;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

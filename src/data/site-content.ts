@@ -238,7 +238,7 @@ export const siteContent = {
       {
         label: "邮箱",
         value: "your-email@example.com",
-        hint: "替换成你常用的工作邮箱",
+        hint: "1250901657@qq.com",
       },
       {
         label: "GitHub",

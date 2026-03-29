@@ -95,7 +95,7 @@ export const siteContent = {
   ] satisfies NavLink[],
   journey: [
     {
-      phase: "阶段 01",
+      phase: "阶段 02",
       period: "从视觉出发",
       title: "美工经历让我建立了对画面、版式与表达的敏感度",
       summary:

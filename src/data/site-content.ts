@@ -61,17 +61,18 @@ export const siteContent = {
       "AI 建站",
       "个人品牌",
     ],
-    url: "https://example.vercel.app",
+    url: "https://phi-roan-60.vercel.app",
   },
+
   identity: {
     name: "马康谊",
     englishName: "Ma Kangyi",
-    role: "马康谊",
+    role: "跨设计、电商、制造与 AI 应用的复合型实践者",
     label: "ONLINE RESUME / PERSONAL BRAND",
     intro:
-      "我经历过美工、电商、工厂 PE，到现在持续用 AI 与代码工具做网页、内容和原型。我的优势不是单一岗位技能，而是能把视觉表达、商业展示、流程理解和快速实现串成一条更完整的工作链路。",
+      "我 02 年出生，经历过美工、电商、工厂 PE，到现在持续用 AI 与代码工具做网页、内容和原型。我的优势不是单一岗位技能，而是能把视觉表达、商业展示、流程理解和快速实现串成一条更完整的工作链路。",
     currentFocus:
-      "现在的我，正在把过去积累的审美、商品展示意识与执行经验，转化成更轻、更快、更可验证的数字作品。",
+      "现在的我，正在把过去积累的审美、商品展示意识与执行经验，转化成更轻、更快、更可验证的数字作品，持续往 AI 网页、内容制作和轻量建站方向发展。",
     highlights: [
       "有审美，也知道信息该怎么被看见",
       "懂电商展示，不只会把页面做漂亮",
@@ -80,11 +81,12 @@ export const siteContent = {
     ],
     workflow: ["理解问题", "梳理结构", "快速做出可见结果", "持续迭代到可交付"],
     quickStats: [
+      { label: "出生年份", value: "2002" },
       { label: "核心经历", value: "4 段" },
-      { label: "工作方法", value: "表达 + 业务 + 落地" },
       { label: "当前方向", value: "AI × 网页 × 内容" },
     ],
   },
+
   navigation: [
     { href: "#journey", label: "经历路径" },
     { href: "#capabilities", label: "我能做什么" },
@@ -93,6 +95,7 @@ export const siteContent = {
     { href: "#about", label: "关于我" },
     { href: "#contact", label: "联系方式" },
   ] satisfies NavLink[],
+
   journey: [
     {
       phase: "阶段 01",
@@ -132,9 +135,10 @@ export const siteContent = {
         "现在我正在使用 AI 与代码工具，把过去积累的判断力更快地落到网页、原型、内容实验与个人项目里。重点不在炫技，而在于更快完成从想法到结果的闭环。",
       abilities: ["AI 辅助实现", "网页搭建", "快速原型与验证"],
       connection:
-        "这也是我想持续发展的方向: 用更轻的方式，做更完整、更有表达力的作品。",
+        "这也是我想持续发展的方向：用更轻的方式，做更完整、更有表达力的作品。",
     },
   ] satisfies JourneyItem[],
+
   capabilities: [
     {
       index: "01",
@@ -165,6 +169,7 @@ export const siteContent = {
       focus: "适合个人项目、快速验证、轻量建站与内容实验。",
     },
   ] satisfies CapabilityItem[],
+
   projects: [
     {
       name: "电商展示页重构方案",
@@ -175,7 +180,11 @@ export const siteContent = {
       highlight:
         "亮点在于把“堆信息”改成“先理解场景，再理解价值”，让展示更职业、更有说服力。",
       tags: ["详情页", "信息层级", "移动端体验"],
-      links: { detail: undefined, source: undefined, demo: undefined },
+      links: {
+        detail: undefined,
+        source: undefined,
+        demo: undefined,
+      },
     },
     {
       name: "AI 辅助网页与内容实验",
@@ -186,7 +195,11 @@ export const siteContent = {
       highlight:
         "亮点在于把复合背景转成可见成果，不靠空泛概念，而是直接交付一个可浏览、可继续迭代的页面。",
       tags: ["Next.js", "Tailwind CSS", "快速验证"],
-      links: { detail: undefined, source: undefined, demo: undefined },
+      links: {
+        detail: undefined,
+        source: undefined,
+        demo: undefined,
+      },
     },
     {
       name: "流程梳理与原型表达",
@@ -197,9 +210,14 @@ export const siteContent = {
       highlight:
         "亮点在于把“难讲清”的问题转换成“更容易理解和推进”的结果，帮助团队协作更顺畅。",
       tags: ["流程梳理", "结构化表达", "协作沟通"],
-      links: { detail: undefined, source: undefined, demo: undefined },
+      links: {
+        detail: undefined,
+        source: undefined,
+        demo: undefined,
+      },
     },
   ] satisfies ProjectItem[],
+
   skillGroups: [
     {
       title: "视觉与设计",
@@ -222,32 +240,42 @@ export const siteContent = {
       items: ["vibecoding", "AI 辅助写作", "Next.js", "TypeScript", "Tailwind CSS"],
     },
   ] satisfies SkillGroup[],
+
   about: {
     text:
-      "我不是从单一路线进入网页与产品表达的人。早期做美工，让我对视觉和版式形成敏感；做电商，让我更在意商品怎样被理解和呈现；在工厂做 PE，让我学会用流程、协作与落地的视角看问题。现在我正在把这些经验和 AI、代码工具结合起来，希望做出更完整、更有效、也更有温度的作品。",
+      "我不是从单一路线进入网页与产品表达的人。早期做美工，让我对视觉和版式形成敏感；做电商，让我更在意商品如何被理解和呈现；在工厂做 PE，让我学会从流程、协作与落地的视角看问题。现在我正在把这些经验与 AI、代码工具结合起来，希望做出更完整、更有效、也更有温度的作品。",
     principles: [
       "先理解问题，再决定页面怎么表达。",
       "重视可执行性，不停留在概念层。",
       "持续学习新工具，但始终服务于结果。",
     ],
   },
+
   contact: {
     intro:
       "如果你正在寻找兼具表达、业务理解与执行意识的人，欢迎联系我。无论是求职机会、合作交流，还是一起做点有意思的项目，我都很愿意进一步沟通。",
     items: [
       {
+        label: "电话",
+        value: "15936513893",
+        hint: "常用联系电话",
+        href: "tel:15936513893",
+      },
+      {
         label: "邮箱",
         value: "makangyi88@gmail.com",
-        hint: "1250901657@qq.com",
+        hint: "常用联系邮箱",
+        href: "mailto:makangyi88@gmail.com",
       },
       {
         label: "GitHub",
-        value: "https://github.com/1250901657-hash/makangyi-resume",
-        hint: "https://github.com/1250901657-hash/makangyi-resume",
+        value: "github.com/1250901657-hash",
+        hint: "我的 GitHub 主页",
+        href: "https://github.com/1250901657-hash",
       },
       {
         label: "其他社交",
-        value: "your-social-link",
+        value: "待补充",
         hint: "可替换为小红书、即刻、LinkedIn 等",
       },
     ] satisfies ContactItem[],

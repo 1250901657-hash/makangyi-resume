@@ -242,8 +242,8 @@ export const siteContent = {
       },
       {
         label: "GitHub",
-        value: "github.com/your-handle",
-        hint: "替换成你的 GitHub 主页",
+        value: "https://github.com/1250901657-hash/makangyi-resume",
+        hint: "https://github.com/1250901657-hash/makangyi-resume",
       },
       {
         label: "其他社交",

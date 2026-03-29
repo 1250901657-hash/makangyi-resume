@@ -237,7 +237,7 @@ export const siteContent = {
     items: [
       {
         label: "邮箱",
-        value: "your-email@example.com",
+        value: "makangyi88@gmail.com",
         hint: "1250901657@qq.com",
       },
       {

@@ -66,7 +66,7 @@ export const siteContent = {
   identity: {
     name: "马康谊",
     englishName: "Ma Kangyi",
-    role: "跨设计、电商、制造与 AI 应用的复合型实践者",
+    role: "马康谊",
     label: "ONLINE RESUME / PERSONAL BRAND",
     intro:
       "我经历过美工、电商、工厂 PE，到现在持续用 AI 与代码工具做网页、内容和原型。我的优势不是单一岗位技能，而是能把视觉表达、商业展示、流程理解和快速实现串成一条更完整的工作链路。",

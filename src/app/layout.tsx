@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Manrope, Noto_Sans_SC } from "next/font/google";
+import { JetBrains_Mono, Noto_Sans_SC, Noto_Serif_SC } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteContent } from "@/data/site-content";
@@ -13,8 +13,9 @@ const notoSansSC = Noto_Sans_SC({
   display: "swap",
 });
 
-const manrope = Manrope({
+const notoSerifSC = Noto_Serif_SC({
   variable: "--font-display",
+  weight: ["500", "600", "700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -57,7 +58,7 @@ export default function RootLayout({
     <html
       lang="zh-CN"
       suppressHydrationWarning
-      className={`${notoSansSC.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
+      className={`${notoSansSC.variable} ${notoSerifSC.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>

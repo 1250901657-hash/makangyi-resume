@@ -21,7 +21,7 @@ function ContactLink({
 
   if (!href) {
     return (
-      <div className="rounded-[24px] border border-black/8 bg-black/[0.02] px-5 py-5 dark:border-white/8 dark:bg-white/[0.04]">
+      <div className="soft-card px-5 py-5">
         {content}
       </div>
     );
@@ -30,7 +30,7 @@ function ContactLink({
   return (
     <a
       href={href}
-      className="rounded-[24px] border border-black/8 bg-black/[0.02] px-5 py-5 transition hover:border-accent/30 hover:bg-accent/[0.04] dark:border-white/8 dark:bg-white/[0.04] dark:hover:border-accent/35 dark:hover:bg-accent/[0.08]"
+      className="soft-card px-5 py-5 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-accent/[0.04] dark:hover:border-accent/35 dark:hover:bg-accent/[0.08]"
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
     >
@@ -41,14 +41,22 @@ function ContactLink({
 
 export function ContactSection() {
   return (
-    <section id="contact" className="section-shell pb-24 pt-20 md:pb-28 md:pt-24">
+    <section id="contact" className="section-shell pb-24 pt-20 md:pb-32 md:pt-28">
       <div className="surface overflow-hidden px-6 py-8 md:px-10 md:py-10">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,360px)] lg:gap-10">
+        <div
+          aria-hidden="true"
+          className="absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(255,124,154,0.32),transparent_70%)] blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(98,216,255,0.28),transparent_70%)] blur-3xl"
+        />
+        <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.618fr)_minmax(320px,1fr)] lg:gap-10">
           <div className="space-y-6">
             <div className="space-y-4">
               <span className="eyebrow">Get In Touch</span>
               <div className="space-y-3">
-                <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
+                <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-[3rem] md:leading-[1.14]">
                   联系方式
                 </h2>
                 <p className="max-w-2xl text-base leading-8 text-muted md:text-lg">
@@ -64,7 +72,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          <aside className="rounded-[28px] border border-accent/15 bg-accent/[0.06] p-6 dark:bg-accent/[0.12] md:p-7">
+          <aside className="soft-card p-6 md:p-7">
             <div className="space-y-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                 下一步
@@ -77,13 +85,13 @@ export function ContactSection() {
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a href="mailto:your-email@example.com" className="btn-primary">
+                <a href="mailto:makangyi88@gmail.com" className="btn-primary">
                   发送邮件
                 </a>
                 <button
                   type="button"
                   disabled
-                  className="inline-flex items-center justify-center rounded-full border border-dashed border-black/12 px-5 py-3 text-sm font-semibold text-muted opacity-80 dark:border-white/12"
+                  className="inline-flex items-center justify-center rounded-full border border-dashed border-white/60 bg-white/18 px-5 py-3 text-sm font-semibold text-muted opacity-80 dark:border-white/14 dark:bg-white/4"
                 >
                   {siteContent.contact.resumeLabel}
                 </button>

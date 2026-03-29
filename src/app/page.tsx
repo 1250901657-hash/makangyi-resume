@@ -1,6 +1,10 @@
+import { AboutSection } from "@/components/sections/about-section";
+import { CapabilitiesSection } from "@/components/sections/capabilities-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
+import { JourneySection } from "@/components/sections/journey-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
+import { SkillsSection } from "@/components/sections/skills-section";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/data/site-content";
 
@@ -11,14 +15,22 @@ export default function Home() {
 
       <main className="flex-1">
         <HeroSection />
+        <JourneySection />
+        <CapabilitiesSection />
         <ProjectsSection />
+        <SkillsSection />
+        <AboutSection />
         <ContactSection />
       </main>
 
-      <footer className="section-shell pb-10">
-        <div className="flex flex-col gap-2 border-t border-white/8 py-6 text-sm text-muted md:flex-row md:items-center md:justify-between">
-          <p>© 2026 {siteContent.identity.name}</p>
-          <p className="section-kicker text-white/28">INDEX.01 / PERSONAL SITE</p>
+      <footer className="section-shell pb-10 text-sm text-muted">
+        <div className="flex flex-col gap-3 border-t border-white/45 py-6 dark:border-white/10 md:flex-row md:items-center md:justify-between">
+          <p>
+            © 2026 {siteContent.identity.name}. Built with Next.js, TypeScript and Tailwind CSS.
+          </p>
+          <p>
+            这是一版带有液态玻璃与塑料彩色质感的个人品牌首页，可继续补充项目、链接与 PDF 简历。
+          </p>
         </div>
       </footer>
     </div>

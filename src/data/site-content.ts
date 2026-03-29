@@ -26,6 +26,11 @@ export type ProjectItem = {
   role: string;
   highlight: string;
   tags: string[];
+  links: {
+    detail?: string;
+    source?: string;
+    demo?: string;
+  };
 };
 
 export type SkillGroup = {
@@ -43,9 +48,9 @@ export type ContactItem = {
 
 export const siteContent = {
   seo: {
-    title: "马康谊 | 个人品牌网站",
+    title: "马康谊 | 在线简历网站",
     description:
-      "马康谊的个人品牌网站，围绕设计感、展示逻辑、流程理解与 AI 快速实现，呈现更鲜明的数字作品表达。",
+      "马康谊的个人简历型网站，围绕美工、电商、工厂 PE 与 vibecoding 的复合经历，展示审美、业务理解、流程落地与 AI 快速实现能力。",
     keywords: [
       "马康谊",
       "个人简历网站",
@@ -62,22 +67,33 @@ export const siteContent = {
   identity: {
     name: "马康谊",
     englishName: "Ma Kangyi",
-    role: "Design, display, AI build.",
-    label: "SYSTEM ONLINE",
-    heroWords: ["PURE", "LOGIC."],
-    intro: "把展示做清楚，把想法做出来。",
-    currentFocus: "Short digital spaces with strong hierarchy and motion.",
-    frameLabel: "FIG. 01 / PROFILE",
+    role: "跨设计、电商、制造与 AI 应用的复合型实践者",
+    label: "ONLINE RESUME / PERSONAL BRAND",
+    intro:
+      "我 02 年出生，经历过美工、电商、工厂 PE，到现在持续用 AI 与代码工具做网页、内容和原型。我的优势不是单一岗位技能，而是能把视觉表达、商业展示、流程理解和快速实现串成一条更完整的工作链路。",
+    currentFocus:
+      "现在的我，正在把过去积累的审美、商品展示意识与执行经验，转化成更轻、更快、更可验证的数字作品，持续往 AI 网页、内容制作和轻量建站方向发展。",
+    highlights: [
+      "有审美，也知道信息该怎么被看见",
+      "懂电商展示，不只会把页面做漂亮",
+      "懂工厂流程，重视执行与落地",
+      "会用 AI 与代码工具，把想法更快变成作品",
+    ],
+    workflow: ["理解问题", "梳理结构", "快速做出可见结果", "持续迭代到可交付"],
     quickStats: [
-      { label: "DISPLAY", value: "清楚" },
-      { label: "BUILD", value: "快速" },
-      { label: "STYLE", value: "有辨识度" },
+      { label: "出生年份", value: "2002" },
+      { label: "核心经历", value: "4 段" },
+      { label: "当前方向", value: "AI × 网页 × 内容" },
     ],
   },
 
   navigation: [
-    { href: "#work", label: "WORK" },
-    { href: "#contact", label: "CONTACT" },
+    { href: "#journey", label: "经历路径" },
+    { href: "#capabilities", label: "我能做什么" },
+    { href: "#projects", label: "项目展示" },
+    { href: "#skills", label: "技能与工具" },
+    { href: "#about", label: "关于我" },
+    { href: "#contact", label: "联系方式" },
   ] satisfies NavLink[],
 
   journey: [
@@ -128,41 +144,77 @@ export const siteContent = {
       index: "01",
       title: "视觉与内容表达",
       description:
-        "把零散信息压成更清楚的版式，让页面有节奏，也有重点。",
-      focus: "页面排版、卖点呈现、内容重组。",
+        "我擅长把零散信息整理成更清晰的页面结构，让内容既有审美，也有阅读节奏。",
+      focus: "适合页面排版、卖点呈现、内容结构优化。",
     },
     {
       index: "02",
       title: "电商展示与用户理解",
       description:
-        "不只追求好看，更会考虑用户先看到什么、怎么继续往下看。",
-      focus: "详情页、落地页、产品展示。",
+        "相比只做视觉，我更关注展示顺序、重点信息与用户理解路径，让页面更接近实际沟通与转化场景。",
+      focus: "适合详情页、落地页、产品展示类内容。",
     },
     {
-      title: "AI 工具与快速实现",
       index: "03",
+      title: "流程优化与执行落地",
       description:
-        "用 AI 与代码工具把想法迅速做成可见页面，适合快速验证和个人品牌表达。",
-      focus: "轻量建站、原型实验、视觉概念落地。",
+        "工厂 PE 的经历让我习惯从流程、协作和执行角度看问题，能把复杂事项拆成更可推进的结构。",
+      focus: "适合流程梳理、信息整理、执行链路优化。",
+    },
+    {
+      index: "04",
+      title: "AI 工具与快速实现",
+      description:
+        "我正在把 AI 与代码工具作为日常工作方式的一部分，用更短的时间做出网页、原型和实验性作品。",
+      focus: "适合个人项目、快速验证、轻量建站与内容实验。",
     },
   ] satisfies CapabilityItem[],
 
   projects: [
     {
-      name: "Brand Pages",
-      category: "WORK.01",
-      summary: "层级清楚，重点直接，气质够强。",
-      role: "Layout / Direction",
-      highlight: "展示页、落地页、个人页面。",
-      tags: ["layout", "rhythm", "brand"],
+      name: "电商展示页重构方案",
+      category: "电商展示 / 页面表达",
+      summary:
+        "围绕商品卖点、场景感与信息顺序，重构一套更适合移动端阅读的展示页结构。",
+      role: "我负责页面结构梳理、视觉呈现方向与内容展示逻辑整理。",
+      highlight:
+        "亮点在于把“堆信息”改成“先理解场景，再理解价值”，让展示更职业、更有说服力。",
+      tags: ["详情页", "信息层级", "移动端体验"],
+      links: {
+        detail: undefined,
+        source: undefined,
+        demo: undefined,
+      },
     },
     {
-      name: "AI Prototypes",
-      category: "WORK.02",
-      summary: "快速成型，把概念先做成能看的页面。",
-      role: "Build / Motion",
-      highlight: "Next.js、动效、实验表达。",
-      tags: ["ai", "web", "motion"],
+      name: "AI 辅助网页与内容实验",
+      category: "AI 应用 / vibecoding",
+      summary:
+        "结合 AI 与前端工具，快速完成个人网页、内容页面或原型实验，缩短从想法到呈现的时间。",
+      role: "我负责信息架构、页面设计、文案组织与前端实现。",
+      highlight:
+        "亮点在于把复合背景转成可见成果，不靠空泛概念，而是直接交付一个可浏览、可继续迭代的页面。",
+      tags: ["Next.js", "Tailwind CSS", "快速验证"],
+      links: {
+        detail: undefined,
+        source: undefined,
+        demo: undefined,
+      },
+    },
+    {
+      name: "流程梳理与原型表达",
+      category: "流程理解 / 原型实现",
+      summary:
+        "将复杂流程、零散需求或跨岗位沟通内容，整理成更清楚的结构文档或轻量页面原型。",
+      role: "我负责流程拆解、信息归纳、结构表达与原型方向整理。",
+      highlight:
+        "亮点在于把“难讲清”的问题转换成“更容易理解和推进”的结果，帮助团队协作更顺畅。",
+      tags: ["流程梳理", "结构化表达", "协作沟通"],
+      links: {
+        detail: undefined,
+        source: undefined,
+        demo: undefined,
+      },
     },
   ] satisfies ProjectItem[],
 
@@ -200,27 +252,33 @@ export const siteContent = {
   },
 
   contact: {
-    intro: "想聊页面、合作或工作机会，可以直接联系我。",
+    intro:
+      "如果你正在寻找兼具表达、业务理解与执行意识的人，欢迎联系我。无论是求职机会、合作交流，还是一起做点有意思的项目，我都很愿意进一步沟通。",
     items: [
       {
-        label: "PHONE",
+        label: "电话",
         value: "15936513893",
-        hint: "Direct",
+        hint: "常用联系电话",
         href: "tel:15936513893",
       },
       {
-        label: "EMAIL",
+        label: "邮箱",
         value: "makangyi88@gmail.com",
-        hint: "Always open",
+        hint: "常用联系邮箱",
         href: "mailto:makangyi88@gmail.com",
       },
       {
-        label: "GITHUB",
+        label: "GitHub",
         value: "github.com/1250901657-hash",
-        hint: "Recent work",
+        hint: "我的 GitHub 主页",
         href: "https://github.com/1250901657-hash",
       },
+      {
+        label: "其他社交",
+        value: "待补充",
+        hint: "可替换为小红书、即刻、LinkedIn 等",
+      },
     ] satisfies ContactItem[],
-    resumeLabel: "More on request",
+    resumeLabel: "下载 PDF 简历",
   },
 } as const;

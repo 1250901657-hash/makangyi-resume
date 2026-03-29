@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Noto_Sans_SC, Noto_Serif_SC } from "next/font/google";
+import { JetBrains_Mono, Noto_Sans_SC, Space_Grotesk } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteContent } from "@/data/site-content";
@@ -13,9 +13,9 @@ const notoSansSC = Noto_Sans_SC({
   display: "swap",
 });
 
-const notoSerifSC = Noto_Serif_SC({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
-  weight: ["500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -58,10 +58,15 @@ export default function RootLayout({
     <html
       lang="zh-CN"
       suppressHydrationWarning
-      className={`${notoSansSC.variable} ${notoSerifSC.variable} ${jetbrainsMono.variable}`}
+      className={`${notoSansSC.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>

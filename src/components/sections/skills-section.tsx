@@ -1,31 +1,31 @@
 import { SectionHeading } from "@/components/section-heading";
 import { siteContent } from "@/data/site-content";
 
-export function SkillsSection() {
-  const tintClasses = [
-    "bg-[linear-gradient(155deg,rgba(98,216,255,0.16),rgba(255,255,255,0.14))]",
-    "bg-[linear-gradient(155deg,rgba(255,124,154,0.16),rgba(255,255,255,0.14))]",
-    "bg-[linear-gradient(155deg,rgba(255,197,110,0.16),rgba(255,255,255,0.14))]",
-    "bg-[linear-gradient(155deg,rgba(123,128,255,0.16),rgba(255,255,255,0.14))]",
-  ];
+const tintClasses = [
+  "bg-[radial-gradient(circle_at_top_right,rgba(70,217,255,0.12),transparent_42%)]",
+  "bg-[radial-gradient(circle_at_top_right,rgba(138,109,255,0.14),transparent_42%)]",
+  "bg-[radial-gradient(circle_at_top_right,rgba(107,168,255,0.12),transparent_42%)]",
+  "bg-[radial-gradient(circle_at_top_right,rgba(183,255,108,0.1),transparent_42%)]",
+];
 
+export function SkillsSection() {
   return (
     <section id="skills" className="section-shell py-20 md:py-28">
       <div className="surface px-6 py-8 md:px-10 md:py-10">
         <div className="grid gap-8 xl:grid-cols-[minmax(280px,0.9fr)_minmax(0,1.1fr)]">
           <div className="space-y-5">
             <SectionHeading
-              label="Skills & Tools"
-              title="技能与工具"
-              description="不做 logo 墙，只保留和你当前经历真正相关的能力与工具。"
+              label="技能与工具"
+              title="把真正相关的能力，整理成一张清楚的能力地图"
+              description="这里不做堆砌式 logo 墙，只保留和你当前路径真正有关的能力与工具。"
             />
 
             <div className="soft-card p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                为什么这样排
+                能力表达
               </p>
               <p className="mt-3 text-sm leading-7 text-muted">
-                我把这部分做成一张“能力地图”，强调的是每组能力的气质和使用场景，而不是堆一堆图标，让页面更像个人方法论，而不是工具清单。
+                我把这部分做成更接近“方法地图”的阅读感，让人先看到你的能力组织方式，再看到具体工具。
               </p>
             </div>
           </div>
@@ -38,7 +38,7 @@ export function SkillsSection() {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between gap-4">
-                    <h3 className="font-display text-2xl font-semibold tracking-tight text-foreground">
+                    <h3 className="font-display text-2xl font-semibold leading-[1.08] tracking-tight text-white">
                       {group.title}
                     </h3>
                     <span className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">
@@ -52,7 +52,7 @@ export function SkillsSection() {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/60 bg-white/24 px-3 py-2 text-sm font-medium text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.76)] backdrop-blur-xl dark:border-white/14 dark:bg-white/4"
+                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white/88"
                     >
                       {item}
                     </span>

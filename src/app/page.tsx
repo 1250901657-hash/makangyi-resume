@@ -24,12 +24,12 @@ export default function Home() {
       </main>
 
       <footer className="section-shell pb-10 text-sm text-muted">
-        <div className="flex flex-col gap-3 border-t border-white/45 py-6 dark:border-white/10 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 border-t border-white/8 py-6 md:flex-row md:items-center md:justify-between">
           <p>
             © 2026 {siteContent.identity.name}. Built with Next.js, TypeScript and Tailwind CSS.
           </p>
           <p>
-            这是一版带有液态玻璃与塑料彩色质感的个人品牌首页，可继续补充项目、链接与 PDF 简历。
+            这是一版在原有内容结构基础上重做视觉语言的深色个人品牌首页。
           </p>
         </div>
       </footer>

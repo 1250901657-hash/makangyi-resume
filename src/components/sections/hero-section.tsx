@@ -4,165 +4,73 @@ export function HeroSection() {
   const { identity } = siteContent;
 
   return (
-    <section id="top" className="section-shell pb-24 pt-8 md:pb-32 md:pt-10">
-      <div className="grid gap-5 lg:grid-cols-[minmax(0,1.618fr)_minmax(320px,1fr)]">
-        <div className="surface section-wash hover-float px-6 py-8 md:px-10 md:py-12 xl:px-12 xl:py-14">
-          <div
-            aria-hidden="true"
-            className="pulse-orb absolute -right-16 -top-14 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,124,154,0.5),rgba(255,124,154,0.12)_42%,transparent_74%)] blur-2xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pulse-orb absolute left-[18%] top-[18%] h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(98,216,255,0.42),transparent_70%)] blur-2xl"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute bottom-10 right-[8%] h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(255,197,110,0.28),transparent_72%)] blur-2xl"
-          />
-          <div aria-hidden="true" className="motion-beam top-[19%]" />
-          <div aria-hidden="true" className="motion-beam top-[78%] [animation-delay:-3.2s]" />
-          <div className="relative grid gap-10 xl:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] xl:items-end">
-            <div className="space-y-8">
-              <div className="space-y-5 fade-up">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="eyebrow">{identity.label}</span>
-                  <span className="soft-card rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">
-                    Liquid Plastic Motion
-                  </span>
-                </div>
+    <section id="top" className="section-shell pb-16 pt-8 md:pb-24 md:pt-10">
+      <div className="grid min-h-[calc(100vh-7.5rem)] gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(430px,0.92fr)] lg:items-center">
+        <div className="space-y-10">
+          <div className="flex items-center gap-4">
+            <span className="h-3.5 w-3.5 rounded-full bg-accent shadow-[0_0_20px_rgba(255,104,0,0.75)]" />
+            <p className="section-kicker text-white/56">{identity.label}</p>
+          </div>
 
-                <div className="space-y-4">
-                  <p className="text-sm font-medium uppercase tracking-[0.22em] text-muted">
-                    {identity.name} · {identity.englishName}
-                  </p>
-                  <h1 className="font-display text-[clamp(2.9rem,7vw,5.9rem)] font-semibold leading-[1.08] tracking-tight text-balance">
-                    {identity.role}
-                  </h1>
-                </div>
+          <div className="space-y-2">
+            <p className="hero-word">{identity.heroWords[0]}</p>
+            <p className="hero-word hero-word-accent">{identity.heroWords[1]}</p>
+          </div>
 
-                <p className="max-w-3xl text-lg leading-9 text-muted md:text-xl">
-                  {identity.intro}
-                </p>
+          <div className="max-w-[38rem] space-y-4">
+            <p className="text-[clamp(1.2rem,2.2vw,1.95rem)] leading-[1.35] text-white/90">
+              {identity.intro}
+            </p>
+            <p className="frame-copy">{identity.currentFocus}</p>
+          </div>
+
+          <div className="grid max-w-[42rem] gap-3 sm:grid-cols-3">
+            {identity.quickStats.map((item) => (
+              <div key={item.label} className="metric-card">
+                <p className="stat-label">{item.label}</p>
+                <p className="stat-value">{item.value}</p>
               </div>
+            ))}
+          </div>
 
-              <div className="flex flex-wrap gap-3 fade-up [animation-delay:120ms]">
-                <a href="#journey" className="btn-primary">
-                  查看经历路径
-                </a>
-                <a href="#projects" className="btn-secondary">
-                  浏览作品方向
-                </a>
-                <a href="#contact" className="btn-secondary">
-                  联系我
-                </a>
-              </div>
-
-              <div className="grid gap-3 fade-up sm:grid-cols-3 [animation-delay:220ms]">
-                {identity.quickStats.map((item) => (
-                  <div key={item.label} className="soft-card px-4 py-4 md:px-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">
-                      {item.label}
-                    </p>
-                    <p className="mt-3 text-sm font-semibold text-foreground md:text-base">
-                      {item.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4 xl:pl-4">
-              <div className="soft-card hover-float p-5 md:p-6 fade-up [animation-delay:160ms]">
-                <div className="flex items-center justify-between gap-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                    当前表达
-                  </p>
-                  <span className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[var(--tone-lime)] shadow-[0_0_18px_rgba(207,255,116,0.9)]" />
-                    active
-                  </span>
-                </div>
-                <p className="mt-4 text-base leading-8 text-foreground/90">{identity.currentFocus}</p>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1 fade-up [animation-delay:260ms]">
-                {identity.workflow.map((item, index) => (
-                  <div key={item} className="soft-card hover-float px-4 py-4 md:px-5">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                      0{index + 1}
-                    </span>
-                    <p className="mt-3 text-sm font-medium leading-7 text-foreground">{item}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="flex items-center gap-5">
+            <a href="#work" className="arrow-cta" aria-label="跳转到作品区域">
+              <svg viewBox="0 0 24 24" className="h-8 w-8 fill-none" aria-hidden="true">
+                <path
+                  d="M5 12H19M13 6L19 12L13 18"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+            <div className="space-y-1">
+              <p className="section-kicker">Scroll</p>
+              <p className="text-sm text-muted">Work / Contact</p>
             </div>
           </div>
         </div>
 
-        <aside className="grid gap-5">
-          <div className="surface hover-float px-6 py-7 md:px-8 md:py-8">
-            <div
-              aria-hidden="true"
-              className="motion-prism right-0 top-0 h-36 w-36 translate-x-6 -translate-y-5 opacity-60"
-            />
-            <div className="relative space-y-5">
-              <div className="space-y-2 fade-up [animation-delay:120ms]">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-                  复合优势
-                </p>
-                <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-[2.2rem]">
-                  把不同经验叠成一个更有辨识度的工作方式
-                </h2>
-              </div>
+        <div className="frame p-5 md:p-7">
+          <div className="showcase-stage">
+            <div className="showcase-orb showcase-orb-orange" />
+            <div className="showcase-orb showcase-orb-cyan" />
+            <div className="showcase-figure" />
+            <div className="showcase-ring left-[12%] top-[12%] h-40 w-40" />
+            <div className="showcase-ring left-[56%] top-[18%] h-24 w-24 [animation-delay:-2.8s]" />
+            <div className="scan-line top-[20%]" />
+            <div className="scan-line top-[76%] [animation-delay:-3.6s]" />
 
-              <div className="space-y-3 fade-up [animation-delay:220ms]">
-                {identity.highlights.map((item, index) => (
-                  <div key={item} className="soft-card hover-float flex gap-4 px-4 py-4">
-                    <span className="font-display text-lg font-semibold text-accent">
-                      0{index + 1}
-                    </span>
-                    <p className="text-sm leading-7 text-foreground">{item}</p>
-                  </div>
-                ))}
+            <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4">
+              <div>
+                <p className="section-kicker text-white/46">Display Mode</p>
+                <p className="mt-2 text-lg font-medium text-white/92">{identity.englishName}</p>
               </div>
+              <span className="mono-pill">{identity.frameLabel}</span>
             </div>
           </div>
-
-          <div className="surface hover-float px-6 py-7 md:px-8 md:py-8">
-            <div className="space-y-4 fade-up [animation-delay:320ms]">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-                视觉基调
-              </p>
-              <div className="grid grid-cols-5 gap-3">
-                {["Coral", "Aqua", "Lime", "Gold", "Iris"].map((tone, index) => (
-                  <div key={tone} className="space-y-3 text-center">
-                    <div
-                      className="mx-auto h-12 w-12 rounded-[18px] border border-white/55 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_22px_rgba(15,23,42,0.08)]"
-                      style={{
-                        background:
-                          index === 0
-                            ? "linear-gradient(145deg, rgba(255,124,154,0.9), rgba(255,255,255,0.55))"
-                            : index === 1
-                              ? "linear-gradient(145deg, rgba(98,216,255,0.92), rgba(255,255,255,0.56))"
-                              : index === 2
-                                ? "linear-gradient(145deg, rgba(207,255,116,0.9), rgba(255,255,255,0.54))"
-                                : index === 3
-                                  ? "linear-gradient(145deg, rgba(255,197,110,0.9), rgba(255,255,255,0.54))"
-                                  : "linear-gradient(145deg, rgba(123,128,255,0.88), rgba(255,255,255,0.56))",
-                      }}
-                    />
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">
-                      {tone}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm leading-7 text-muted">
-                用液态玻璃、彩色塑料高光和更强的悬浮动势，把页面做得更像一张会发光的个人名片。
-              </p>
-            </div>
-          </div>
-        </aside>
+        </div>
       </div>
     </section>
   );

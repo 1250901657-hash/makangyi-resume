@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Noto_Sans_SC, Noto_Serif_SC } from "next/font/google";
-
-import { ThemeProvider } from "@/components/theme-provider";
+import { Anton, JetBrains_Mono, Noto_Sans_SC } from "next/font/google";
 import { siteContent } from "@/data/site-content";
 
 import "./globals.css";
@@ -13,9 +11,9 @@ const notoSansSC = Noto_Sans_SC({
   display: "swap",
 });
 
-const notoSerifSC = Noto_Serif_SC({
+const anton = Anton({
   variable: "--font-display",
-  weight: ["500", "600", "700", "800", "900"],
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
     title: siteContent.seo.title,
     description: siteContent.seo.description,
     url: siteContent.seo.url,
-    siteName: "马康谊在线简历",
+    siteName: "马康谊个人网站",
     locale: "zh_CN",
     type: "website",
   },
@@ -58,12 +56,10 @@ export default function RootLayout({
     <html
       lang="zh-CN"
       suppressHydrationWarning
-      className={`${notoSansSC.variable} ${notoSerifSC.variable} ${jetbrainsMono.variable}`}
+      className={`${notoSansSC.variable} ${anton.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen bg-background text-foreground antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+      <body className="min-h-screen overflow-x-hidden bg-background text-foreground antialiased">
+        {children}
       </body>
     </html>
   );

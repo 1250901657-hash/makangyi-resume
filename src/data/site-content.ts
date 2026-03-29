@@ -26,11 +26,6 @@ export type ProjectItem = {
   role: string;
   highlight: string;
   tags: string[];
-  links: {
-    detail?: string;
-    source?: string;
-    demo?: string;
-  };
 };
 
 export type SkillGroup = {
@@ -67,29 +62,22 @@ export const siteContent = {
   identity: {
     name: "马康谊",
     englishName: "Ma Kangyi",
-    role: "把设计感、展示逻辑与 AI 落地结合起来的创作型实践者",
-    label: "MA KANGYI / DIGITAL PRESENCE",
-    intro:
-      "我做过美工、电商和工厂 PE，现在更想把这些经验压缩成更直接的网页、内容和数字作品表达。",
-    currentFocus:
-      "当前重点是用更轻的方式做出更有辨识度的页面，把想法快速变成能被看见的结果。",
-    highlights: [
-      "能把页面做得好看，也让重点更容易被看懂",
-      "不是只做视觉，而是会考虑展示顺序和结果",
-      "会用 AI 与代码工具，把想法更快做成页面",
-    ],
-    workflow: ["抓住重点", "拉出结构", "快速成型"],
+    role: "Design, display, AI build.",
+    label: "SYSTEM ONLINE",
+    heroWords: ["VISUAL", "LOGIC."],
+    intro: "把展示做清楚，把想法做出来。",
+    currentFocus: "Short digital spaces with strong hierarchy and motion.",
+    frameLabel: "FIG. 01 / PROFILE",
     quickStats: [
-      { label: "方向", value: "设计 × 展示 × AI" },
-      { label: "输出", value: "网页 / 内容 / 原型" },
-      { label: "状态", value: "持续做新作品" },
+      { label: "DISPLAY", value: "清楚" },
+      { label: "BUILD", value: "快速" },
+      { label: "STYLE", value: "有辨识度" },
     ],
   },
 
   navigation: [
-    { href: "#capabilities", label: "我能做什么" },
-    { href: "#projects", label: "作品方向" },
-    { href: "#contact", label: "联系方式" },
+    { href: "#work", label: "WORK" },
+    { href: "#contact", label: "CONTACT" },
   ] satisfies NavLink[],
 
   journey: [
@@ -161,34 +149,20 @@ export const siteContent = {
 
   projects: [
     {
-      name: "品牌展示型页面",
-      category: "电商展示 / 页面表达",
-      summary:
-        "适合把产品、个人或内容做成更有氛围感和重点节奏的展示页面。",
-      role: "结构整理、视觉方向、重点信息安排。",
-      highlight:
-        "重点不是堆信息，而是先抓住注意力，再把价值顺着节奏讲清楚。",
-      tags: ["展示页", "信息层级", "视觉节奏"],
-      links: {
-        detail: undefined,
-        source: undefined,
-        demo: undefined,
-      },
+      name: "Brand Pages",
+      category: "WORK.01",
+      summary: "层级清楚，重点直接，气质够强。",
+      role: "Layout / Direction",
+      highlight: "展示页、落地页、个人页面。",
+      tags: ["layout", "rhythm", "brand"],
     },
     {
-      name: "AI 网页与内容实验",
-      category: "AI 应用 / vibecoding",
-      summary:
-        "用 AI 和前端工具快速做页面概念、互动气氛和轻量原型，把想法更快变成可浏览的东西。",
-      role: "信息架构、页面设计、文案整理、前端实现。",
-      highlight:
-        "我更在意成品是否真的能被点开、被看到，而不是只停留在想法阶段。",
-      tags: ["Next.js", "Tailwind", "快速成型"],
-      links: {
-        detail: undefined,
-        source: undefined,
-        demo: undefined,
-      },
+      name: "AI Prototypes",
+      category: "WORK.02",
+      summary: "快速成型，把概念先做成能看的页面。",
+      role: "Build / Motion",
+      highlight: "Next.js、动效、实验表达。",
+      tags: ["ai", "web", "motion"],
     },
   ] satisfies ProjectItem[],
 
@@ -226,28 +200,27 @@ export const siteContent = {
   },
 
   contact: {
-    intro:
-      "如果你喜欢这种更有设计感的页面表达，或者想一起做点新的东西，欢迎联系我。",
+    intro: "想聊页面、合作或工作机会，可以直接联系我。",
     items: [
       {
-        label: "电话",
+        label: "PHONE",
         value: "15936513893",
-        hint: "常用联系电话",
+        hint: "Direct",
         href: "tel:15936513893",
       },
       {
-        label: "邮箱",
+        label: "EMAIL",
         value: "makangyi88@gmail.com",
-        hint: "常用联系邮箱",
+        hint: "Always open",
         href: "mailto:makangyi88@gmail.com",
       },
       {
-        label: "GitHub",
+        label: "GITHUB",
         value: "github.com/1250901657-hash",
-        hint: "我的 GitHub 主页",
+        hint: "Recent work",
         href: "https://github.com/1250901657-hash",
       },
     ] satisfies ContactItem[],
-    resumeLabel: "作品与简历可私聊获取",
+    resumeLabel: "More on request",
   },
 } as const;

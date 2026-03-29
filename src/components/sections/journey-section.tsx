@@ -10,7 +10,6 @@ export function JourneySection() {
   ];
 
   return (
-        title="不是跳跃式经历，而是一条不断扩展视角的职业路径"
     <section id="journey" className="section-shell py-20 md:py-28">
       <div className="grid gap-8 xl:grid-cols-[minmax(280px,0.92fr)_minmax(0,1.618fr)]">
         <div className="space-y-5 xl:sticky xl:top-28 xl:self-start">

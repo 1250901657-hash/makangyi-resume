@@ -16,7 +16,6 @@ export function CapabilitiesSection() {
   ];
 
   return (
-    <section id="capabilities" className="section-shell py-20 md:py-24">
     <section id="capabilities" className="section-shell py-20 md:py-28">
       <SectionHeading
         label="What I Can Do"

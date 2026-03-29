@@ -151,16 +151,16 @@ body::after {
 
   .hero-word {
     font-family: var(--font-display), sans-serif;
-    font-size: clamp(4.8rem, 14vw, 13rem);
-    line-height: 0.86;
-    letter-spacing: -0.05em;
+    font-size: clamp(4.8rem, 13.2vw, 12rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--foreground);
   }
 
   .hero-word-accent {
     color: var(--accent);
-    text-shadow: 0 0 42px rgba(255, 104, 0, 0.18);
+    text-shadow: 0 0 32px rgba(255, 104, 0, 0.12);
   }
 
   .frame-copy {
@@ -197,6 +197,7 @@ body::after {
 
   .font-display {
     font-family: var(--font-display), var(--font-body), sans-serif;
+    letter-spacing: -0.04em;
   }
 
   .showcase-stage {

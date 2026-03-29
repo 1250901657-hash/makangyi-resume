@@ -64,7 +64,7 @@ export const siteContent = {
     englishName: "Ma Kangyi",
     role: "Design, display, AI build.",
     label: "SYSTEM ONLINE",
-    heroWords: ["MMMM", "马康谊."],
+    heroWords: ["PURE", "LOGIC."],
     intro: "把展示做清楚，把想法做出来。",
     currentFocus: "Short digital spaces with strong hierarchy and motion.",
     frameLabel: "FIG. 01 / PROFILE",

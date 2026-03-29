@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, JetBrains_Mono, Noto_Sans_SC } from "next/font/google";
+import { JetBrains_Mono, League_Spartan, Noto_Sans_SC } from "next/font/google";
 import { siteContent } from "@/data/site-content";
 
 import "./globals.css";
@@ -11,9 +11,9 @@ const notoSansSC = Noto_Sans_SC({
   display: "swap",
 });
 
-const anton = Anton({
+const leagueSpartan = League_Spartan({
   variable: "--font-display",
-  weight: "400",
+  weight: ["700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -56,7 +56,7 @@ export default function RootLayout({
     <html
       lang="zh-CN"
       suppressHydrationWarning
-      className={`${notoSansSC.variable} ${anton.variable} ${jetbrainsMono.variable}`}
+      className={`${notoSansSC.variable} ${leagueSpartan.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen overflow-x-hidden bg-background text-foreground antialiased">
         {children}

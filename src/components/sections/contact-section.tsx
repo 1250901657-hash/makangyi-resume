@@ -42,15 +42,16 @@ function ContactLink({
 export function ContactSection() {
   return (
     <section id="contact" className="section-shell pb-24 pt-20 md:pb-32 md:pt-28">
-      <div className="surface overflow-hidden px-6 py-8 md:px-10 md:py-10">
+      <div className="surface hover-float overflow-hidden px-6 py-8 md:px-10 md:py-10">
         <div
           aria-hidden="true"
-          className="absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(255,124,154,0.32),transparent_70%)] blur-3xl"
+          className="pulse-orb absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(255,124,154,0.32),transparent_70%)] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(98,216,255,0.28),transparent_70%)] blur-3xl"
+          className="pulse-orb absolute right-0 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(98,216,255,0.28),transparent_70%)] blur-3xl"
         />
+        <div aria-hidden="true" className="motion-beam top-[14%]" />
         <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.618fr)_minmax(320px,1fr)] lg:gap-10">
           <div className="space-y-6">
             <div className="space-y-4">
@@ -72,29 +73,30 @@ export function ContactSection() {
             </div>
           </div>
 
-          <aside className="soft-card p-6 md:p-7">
+          <aside className="soft-card hover-float p-6 md:p-7">
             <div className="space-y-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                 下一步
               </p>
               <h3 className="font-display text-2xl font-semibold tracking-tight text-foreground">
-                欢迎联系我，聊工作机会、合作项目，或一起把想法做成作品。
+                如果你想做一个更有辨识度的页面，我们可以直接开始聊。
               </h3>
               <p className="text-sm leading-7 text-muted">
-                你可以先把邮箱、GitHub 和社交链接替换成真实信息，再上传 PDF 简历文件。这个区域已经把交互位置预留好了。
+                工作机会、合作项目、个人品牌页，或者只是想交流一下想法，都可以。
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <a href="mailto:makangyi88@gmail.com" className="btn-primary">
                   发送邮件
                 </a>
-                <button
-                  type="button"
-                  disabled
-                  className="inline-flex items-center justify-center rounded-full border border-dashed border-white/60 bg-white/18 px-5 py-3 text-sm font-semibold text-muted opacity-80 dark:border-white/14 dark:bg-white/4"
+                <a
+                  href="https://github.com/1250901657-hash"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
                 >
-                  {siteContent.contact.resumeLabel}
-                </button>
+                  GitHub
+                </a>
               </div>
             </div>
           </aside>

@@ -6,13 +6,11 @@ export function CapabilitiesSection() {
     "md:col-span-2 xl:col-span-7",
     "md:col-span-1 xl:col-span-5",
     "md:col-span-1 xl:col-span-5",
-    "md:col-span-2 xl:col-span-7",
   ];
   const glowClasses = [
     "bg-[radial-gradient(circle,rgba(98,216,255,0.34),transparent_68%)]",
     "bg-[radial-gradient(circle,rgba(255,124,154,0.32),transparent_68%)]",
     "bg-[radial-gradient(circle,rgba(255,197,110,0.3),transparent_68%)]",
-    "bg-[radial-gradient(circle,rgba(123,128,255,0.34),transparent_68%)]",
   ];
 
   return (
@@ -20,14 +18,14 @@ export function CapabilitiesSection() {
       <SectionHeading
         label="What I Can Do"
         title="我能提供的，不只是单一岗位能力"
-        description="我更像一个能够把表达、业务理解、流程意识和快速实现连接起来的人。"
+        description="保留最核心的三件事，页面会更干净，也更容易让人一眼看懂我擅长什么。"
       />
 
       <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-12">
         {siteContent.capabilities.map((item, index) => (
           <article
             key={item.title}
-            className={`surface px-6 py-6 md:px-7 md:py-7 ${layoutClasses[index]}`}
+            className={`surface hover-float px-6 py-6 md:px-7 md:py-7 ${layoutClasses[index]}`}
           >
             <div
               aria-hidden="true"

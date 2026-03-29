@@ -151,6 +151,14 @@ body::after {
     backdrop-filter: blur(28px) saturate(180%);
   }
 
+  .surface:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 36px 96px var(--panel-shadow),
+      0 16px 42px var(--panel-shadow-soft),
+      inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  }
+
   .surface::before {
     content: "";
     position: absolute;
@@ -257,6 +265,65 @@ body::after {
     backdrop-filter: blur(18px);
   }
 
+  .soft-card::after {
+    content: "";
+    position: absolute;
+    inset: -24% auto auto -30%;
+    width: 42%;
+    height: 180%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: rotate(18deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .soft-card:hover::after {
+    animation: prism-swipe 1.1s ease;
+  }
+
+  .motion-prism {
+    position: absolute;
+    inset: auto;
+    border-radius: 999px;
+    background: conic-gradient(
+      from 180deg,
+      rgba(255, 124, 154, 0.72),
+      rgba(255, 197, 110, 0.72),
+      rgba(98, 216, 255, 0.7),
+      rgba(123, 128, 255, 0.72),
+      rgba(255, 124, 154, 0.72)
+    );
+    animation:
+      prism-spin 12s linear infinite,
+      halo-drift 11s ease-in-out infinite;
+    filter: blur(1px);
+  }
+
+  .motion-beam {
+    position: absolute;
+    left: -25%;
+    right: -25%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+    opacity: 0.8;
+    animation: beam-scan 7.8s linear infinite;
+    pointer-events: none;
+  }
+
+  .hover-float {
+    will-change: transform, box-shadow;
+  }
+
+  .hover-float:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+
+  .pulse-orb {
+    animation:
+      halo-drift 10s ease-in-out infinite,
+      pulse-glow 6.2s ease-in-out infinite;
+  }
+
   .section-wash {
     position: relative;
   }
@@ -300,6 +367,13 @@ body::after {
     0 32px 96px var(--panel-shadow),
     0 14px 36px var(--panel-shadow-soft),
     inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.dark .surface:hover {
+  box-shadow:
+    0 42px 110px rgba(2, 8, 20, 0.5),
+    0 18px 44px rgba(2, 8, 20, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .dark .surface::before {
@@ -366,6 +440,59 @@ body::after {
   24%,
   100% {
     transform: translateX(320%) skewX(-22deg);
+    opacity: 0;
+  }
+}
+
+@keyframes prism-swipe {
+  0% {
+    transform: translateX(-160%) rotate(18deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.72;
+  }
+  100% {
+    transform: translateX(360%) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes prism-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes beam-scan {
+  0% {
+    transform: translate3d(-36%, 0, 0) scaleX(0.75);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.72;
+  }
+  88%,
+  100% {
+    transform: translate3d(36%, 0, 0) scaleX(1.15);
     opacity: 0;
   }
 }

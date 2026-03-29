@@ -1,10 +1,7 @@
-import { AboutSection } from "@/components/sections/about-section";
 import { CapabilitiesSection } from "@/components/sections/capabilities-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
-import { JourneySection } from "@/components/sections/journey-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
-import { SkillsSection } from "@/components/sections/skills-section";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/data/site-content";
 
@@ -15,11 +12,8 @@ export default function Home() {
 
       <main className="flex-1">
         <HeroSection />
-        <JourneySection />
         <CapabilitiesSection />
         <ProjectsSection />
-        <SkillsSection />
-        <AboutSection />
         <ContactSection />
       </main>
 
@@ -28,9 +22,7 @@ export default function Home() {
           <p>
             © 2026 {siteContent.identity.name}. Built with Next.js, TypeScript and Tailwind CSS.
           </p>
-          <p>
-            这是一版带有液态玻璃与塑料彩色质感的个人品牌首页，可继续补充项目、链接与 PDF 简历。
-          </p>
+          <p>Liquid glass, vivid plastic tones, and a cleaner personal presence.</p>
         </div>
       </footer>
     </div>

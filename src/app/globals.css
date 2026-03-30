@@ -5,10 +5,10 @@
 :root {
   color-scheme: dark;
   --background: #060814;
-  --foreground: #f5f7ff;
-  --muted: #98a4c7;
-  --accent: #6ba8ff;
-  --accent-strong: #7b6dff;
+  --foreground: #fbfcff;
+  --muted: #a7b2d3;
+  --accent: #7ce7ff;
+  --accent-strong: #9f7dff;
   --surface: rgba(10, 14, 31, 0.78);
   --surface-strong: rgba(14, 20, 42, 0.92);
   --surface-stroke: rgba(255, 255, 255, 0.1);
@@ -19,6 +19,10 @@
   --tone-blue: #6ba8ff;
   --tone-violet: #8a6dff;
   --tone-lime: #b7ff6c;
+  --pointer-x: 50vw;
+  --pointer-y: 24vh;
+  --pointer-local-x: 50%;
+  --pointer-local-y: 50%;
 }
 
 .dark {
@@ -42,6 +46,7 @@ html {
 body {
   position: relative;
   min-height: 100vh;
+  isolation: isolate;
   overflow-x: clip;
   font-family: var(--font-body), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   color: var(--foreground);
@@ -65,6 +70,7 @@ body::before {
   background-size: 54px 54px;
   opacity: 0.28;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.32));
+  animation: grid-drift 34s linear infinite;
 }
 
 body::after {
@@ -120,6 +126,20 @@ body::after {
     @apply mx-auto w-full max-w-[96rem] px-4 md:px-7 xl:px-8;
   }
 
+  .pointer-aura {
+    position: fixed;
+    inset: -18%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(124, 231, 255, 0.22), transparent 9%),
+      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(159, 125, 255, 0.16), transparent 16%),
+      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(183, 255, 108, 0.08), transparent 22%);
+    filter: blur(34px);
+    opacity: 0.95;
+    transition: opacity 180ms ease;
+  }
+
   .surface {
     position: relative;
     isolation: isolate;
@@ -127,6 +147,7 @@ body::after {
     border: 1px solid var(--surface-stroke);
     border-radius: clamp(1.75rem, 2.2vw, 2.4rem);
     background:
+      radial-gradient(circle at var(--pointer-local-x, 50%) var(--pointer-local-y, 50%), rgba(255, 255, 255, 0.08), transparent 36%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 28%),
       linear-gradient(160deg, rgba(20, 28, 56, 0.94), rgba(10, 14, 30, 0.84));
     box-shadow:
@@ -134,6 +155,10 @@ body::after {
       0 14px 34px var(--panel-shadow-soft),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(22px) saturate(140%);
+    transition:
+      transform 320ms ease,
+      box-shadow 320ms ease,
+      border-color 320ms ease;
   }
 
   .surface::before {
@@ -156,8 +181,10 @@ body::after {
     background:
       linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent),
       linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%);
+    background-size: 200% 100%, 100% 100%;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 78%);
     pointer-events: none;
+    animation: prism-scan 12s linear infinite;
   }
 
   .soft-card {
@@ -166,12 +193,17 @@ body::after {
     border-radius: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background:
+      radial-gradient(circle at var(--pointer-local-x, 50%) var(--pointer-local-y, 50%), rgba(255, 255, 255, 0.14), transparent 28%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 32%),
       rgba(10, 15, 32, 0.72);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.06),
       0 18px 34px rgba(1, 4, 15, 0.24);
     backdrop-filter: blur(18px);
+    transition:
+      transform 280ms ease,
+      box-shadow 280ms ease,
+      border-color 280ms ease;
   }
 
   .soft-card::before {
@@ -184,6 +216,7 @@ body::after {
     background: radial-gradient(circle, rgba(70, 217, 255, 0.16), transparent 70%);
     filter: blur(20px);
     pointer-events: none;
+    animation: glow-float 10s ease-in-out infinite;
   }
 
   .soft-card::after {
@@ -199,17 +232,28 @@ body::after {
       transparent 58%,
       transparent 100%
     );
-    opacity: 0;
-    transform: translateX(-26%);
-    transition:
-      opacity 260ms ease,
-      transform 260ms ease;
+    opacity: 0.2;
+    transform: translateX(-30%);
     pointer-events: none;
+    animation: card-shimmer 8.5s ease-in-out infinite;
   }
 
   .soft-card:hover::after {
-    opacity: 1;
-    transform: translateX(0);
+    opacity: 0.55;
+  }
+
+  .soft-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(107, 168, 255, 0.18);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 24px 44px rgba(1, 4, 15, 0.32),
+      0 0 30px rgba(70, 217, 255, 0.08);
+  }
+
+  [data-tilt] {
+    will-change: transform;
+    transform-style: preserve-3d;
   }
 
   .eyebrow {
@@ -236,6 +280,7 @@ body::after {
     box-shadow:
       0 18px 40px rgba(86, 129, 255, 0.26),
       0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    animation: button-glow 4.8s ease-in-out infinite;
   }
 
   .btn-primary::before {
@@ -247,6 +292,18 @@ body::after {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
     transform: skewX(-20deg);
     animation: beam-slide 6s linear infinite;
+  }
+
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    border-radius: inherit;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 56%);
+    opacity: 0.25;
+    filter: blur(20px);
+    pointer-events: none;
+    animation: button-halo 5.6s ease-in-out infinite;
   }
 
   .btn-primary:hover {
@@ -267,6 +324,7 @@ body::after {
       inset 0 1px 0 rgba(255, 255, 255, 0.05),
       0 14px 30px rgba(1, 4, 15, 0.2);
     backdrop-filter: blur(16px);
+    animation: secondary-breathe 6.5s ease-in-out infinite;
   }
 
   .btn-secondary:hover {
@@ -316,6 +374,20 @@ body::after {
   }
 }
 
+@keyframes grid-drift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+
+  50% {
+    background-position: 26px 12px, -18px 20px;
+  }
+
+  100% {
+    background-position: 54px 0, 0 54px;
+  }
+}
+
 @keyframes pulse-soft {
   0%,
   100% {
@@ -341,6 +413,97 @@ body::after {
 
   68% {
     transform: translate3d(-1%, 2%, 0) scale(0.98);
+  }
+}
+
+@keyframes prism-scan {
+  0% {
+    background-position: -180% 0, 0 0;
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.95;
+  }
+
+  100% {
+    background-position: 220% 0, 0 0;
+    opacity: 0.6;
+  }
+}
+
+@keyframes glow-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.62;
+  }
+
+  50% {
+    transform: translate3d(-10px, -10px, 0) scale(1.12);
+    opacity: 0.95;
+  }
+}
+
+@keyframes card-shimmer {
+  0%,
+  100% {
+    transform: translateX(-34%);
+    opacity: 0.12;
+  }
+
+  45% {
+    opacity: 0.36;
+  }
+
+  60% {
+    transform: translateX(22%);
+    opacity: 0.3;
+  }
+}
+
+@keyframes button-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 18px 40px rgba(86, 129, 255, 0.26),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  }
+
+  50% {
+    box-shadow:
+      0 24px 52px rgba(86, 129, 255, 0.42),
+      0 0 34px rgba(70, 217, 255, 0.22),
+      0 0 0 1px rgba(255, 255, 255, 0.07) inset;
+  }
+}
+
+@keyframes button-halo {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.32;
+  }
+}
+
+@keyframes secondary-breathe {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 14px 30px rgba(1, 4, 15, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 18px 34px rgba(1, 4, 15, 0.24),
+      0 0 22px rgba(107, 168, 255, 0.08);
   }
 }
 

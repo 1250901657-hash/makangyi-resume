@@ -20,12 +20,17 @@ function ContactLink({
   );
 
   if (!href) {
-    return <div className="soft-card px-5 py-5">{content}</div>;
+    return (
+      <div data-tilt className="soft-card px-5 py-5">
+        {content}
+      </div>
+    );
   }
 
   return (
     <a
       href={href}
+      data-tilt
       className="soft-card block px-5 py-5 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-white/[0.05]"
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
@@ -40,8 +45,8 @@ export function ContactSection() {
   const visibleItems = siteContent.contact.items.filter((item) => item.href);
 
   return (
-    <section id="contact" className="section-shell pb-24 pt-20 md:pb-28 md:pt-24">
-      <div className="surface overflow-hidden px-6 py-8 md:px-10 md:py-10">
+    <section id="contact" className="section-shell pb-28 pt-24 md:pb-32 md:pt-28">
+      <div className="surface overflow-hidden px-7 py-10 md:px-11 md:py-12">
         <div
           aria-hidden="true"
           className="absolute right-[-4rem] top-[-5rem] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(70,217,255,0.16),transparent_72%)] blur-3xl"
@@ -50,8 +55,16 @@ export function ContactSection() {
           aria-hidden="true"
           className="absolute bottom-[-4rem] left-[20%] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(138,109,255,0.16),transparent_72%)] blur-3xl"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-[18%] top-[12%] h-px bg-gradient-to-r from-transparent via-white/24 to-transparent"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute right-[12%] top-[16%] h-2 w-2 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.9)] [animation:pulse-soft_3.2s_ease-in-out_infinite]"
+        />
 
-        <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] lg:gap-10">
+        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,400px)] lg:gap-12">
           <div className="space-y-6">
             <div className="space-y-4">
               <span className="eyebrow">联系方式</span>
@@ -72,7 +85,23 @@ export function ContactSection() {
             </div>
           </div>
 
-          <aside className="soft-card flex flex-col justify-between p-6 md:p-7">
+          <aside data-tilt className="soft-card flex flex-col justify-between p-6 md:p-7">
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#7ce7ff]/90 to-transparent"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute right-[-2rem] top-8 h-32 w-32 rounded-full border border-white/8 [animation:spin-slow_18s_linear_infinite]"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute bottom-[-2rem] right-[12%] h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(124,231,255,0.18),transparent_72%)] blur-2xl"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-y-10 right-[30%] w-px bg-gradient-to-b from-transparent via-white/12 to-transparent"
+            />
             <div className="space-y-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                 下一步

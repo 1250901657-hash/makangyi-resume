@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Noto_Sans_SC, Space_Grotesk } from "next/font/google";
 
+import { PointerEffects } from "@/components/pointer-effects";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteContent } from "@/data/site-content";
 
@@ -67,6 +68,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <PointerEffects />
           {children}
         </ThemeProvider>
       </body>

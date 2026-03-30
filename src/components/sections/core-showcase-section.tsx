@@ -1,5 +1,4 @@
 import { BrandIp } from "@/components/brand-ip";
-import { SectionHeading } from "@/components/section-heading";
 import { siteContent } from "@/data/site-content";
 
 const journeyPreview = siteContent.journey.slice(0, 3);
@@ -11,45 +10,43 @@ const toolPreview = Array.from(
 
 export function CoreShowcaseSection() {
   return (
-    <section id="showcase" className="section-shell py-20 md:py-32">
+    <section id="showcase" className="section-shell py-22 md:py-32">
       <div className="relative overflow-visible px-2 md:px-4">
-        <div
-          aria-hidden="true"
-          className="absolute left-[8%] top-[14%] h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(36,72,255,0.24),transparent_72%)] blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute right-[14%] top-[18%] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.18),transparent_72%)] blur-3xl"
-        />
-
-        <div className="max-w-[34rem]">
-          <SectionHeading
-            label="核心概览"
-            title="核心生态"
-            description="经历、能力和项目不再一排排码开，而是围绕同一个主角展开。"
-          />
+        <div className="max-w-[26rem] space-y-4">
+          <span className="eyebrow">核心概览</span>
+          <h2 className="font-display text-[clamp(3.2rem,7vw,6rem)] leading-[0.9] text-white">
+            核心
+            <br />
+            生态
+          </h2>
+          <p className="max-w-sm text-base leading-8 text-white/80">
+            不把所有信息做成一样大的卡片，而是让主视觉和重点内容真正被看见。
+          </p>
         </div>
 
-        <div className="relative mt-14 flex flex-col gap-5 lg:min-h-[48rem]">
-          <div className="lg:absolute lg:left-[34%] lg:top-0 lg:z-20">
-            <BrandIp size="md" showSatellites className="mx-auto w-[15rem] sm:w-[18rem] xl:w-[22rem]" />
+        <div className="relative mt-12 min-h-[34rem] md:min-h-[42rem] xl:min-h-[48rem]">
+          <div className="absolute left-[38%] top-[2%] z-10 hidden xl:block">
+            <BrandIp size="md" showSatellites={false} className="w-[16rem]" />
           </div>
 
           <article
             data-tilt
-            className="soft-card relative px-5 py-5 lg:absolute lg:left-0 lg:top-6 lg:w-[21rem] lg:rotate-[-7deg] lg:rounded-[2rem_3rem_2rem_3rem]"
+            className="soft-card relative z-20 max-w-[44rem] px-7 py-7 md:px-9 md:py-9 xl:absolute xl:left-[24%] xl:top-[12%] xl:w-[38rem] xl:rotate-[2deg] xl:rounded-[3rem_3rem_2rem_2rem]"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              经历路径
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+              主案例 / 01
             </p>
-            <h3 className="mt-3 font-display text-[1.7rem] leading-[1.04] text-white">
-              {journeyPreview[0]?.period}
+            <h3 className="mt-4 font-display text-[clamp(2.4rem,5vw,4.6rem)] leading-[0.92] text-white">
+              {projectPreview[0]?.name}
             </h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {journeyPreview[0]?.abilities.map((item) => (
+            <p className="mt-5 max-w-[28rem] text-base leading-8 text-white/82">
+              {projectPreview[0]?.summary}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {projectPreview[0]?.tags.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-white/86"
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-white/84"
                 >
                   {item}
                 </span>
@@ -59,16 +56,16 @@ export function CoreShowcaseSection() {
 
           <article
             data-tilt
-            className="soft-card relative px-5 py-5 lg:absolute lg:left-[6%] lg:top-[16rem] lg:w-[18rem] lg:rotate-[6deg] lg:rounded-[3rem_2rem_3rem_2rem]"
+            className="soft-card relative mt-5 max-w-[18rem] px-4 py-4 xl:absolute xl:left-[2%] xl:top-[8%] xl:mt-0 xl:w-[16rem] xl:rotate-[-8deg] xl:rounded-[2rem_3rem_2rem_3rem]"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              能力摘要
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+              能力
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {capabilityPreview.map((item) => (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {capabilityPreview.slice(0, 2).map((item) => (
                 <span
                   key={item.title}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-sm font-medium text-white/86"
+                  className="rounded-full bg-white/[0.05] px-3 py-1.5 text-xs text-white/84"
                 >
                   {item.title}
                 </span>
@@ -78,37 +75,40 @@ export function CoreShowcaseSection() {
 
           <article
             data-tilt
-            className="soft-card relative px-5 py-5 lg:absolute lg:right-[2%] lg:top-0 lg:w-[24rem] lg:rotate-[5deg] lg:rounded-[2rem_3rem_2rem_3.5rem]"
+            className="soft-card relative mt-5 max-w-[18rem] px-4 py-4 xl:absolute xl:right-[6%] xl:top-[4%] xl:mt-0 xl:w-[15rem] xl:rotate-[9deg] xl:rounded-[3rem_2rem_3rem_2rem]"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              项目方向 01
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+              阶段
             </p>
-            <h3 className="mt-3 font-display text-[2rem] leading-[1.02] text-white">
-              {projectPreview[0]?.name}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-white/84">{projectPreview[0]?.summary}</p>
+            <div className="mt-3 space-y-2">
+              {journeyPreview.map((item) => (
+                <p key={item.phase} className="text-xs leading-6 text-white/84">
+                  {item.period}
+                </p>
+              ))}
+            </div>
           </article>
 
           <article
             data-tilt
-            className="soft-card relative px-5 py-5 lg:absolute lg:right-[8%] lg:top-[17rem] lg:w-[20rem] lg:rotate-[-6deg] lg:rounded-[3rem_2rem_2rem_3rem]"
+            className="soft-card relative mt-5 max-w-[22rem] px-5 py-5 xl:absolute xl:right-[0%] xl:top-[22rem] xl:mt-0 xl:w-[20rem] xl:rotate-[-6deg] xl:rounded-[2rem_3rem_2rem_3rem]"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              项目方向 02
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+              项目方向 / 02
             </p>
-            <h3 className="mt-3 font-display text-[1.7rem] leading-[1.04] text-white">
+            <h3 className="mt-3 font-display text-[1.8rem] leading-[1.02] text-white">
               {projectPreview[1]?.name}
             </h3>
-            <p className="mt-4 text-sm leading-7 text-white/84">{projectPreview[1]?.summary}</p>
+            <p className="mt-3 text-sm leading-7 text-white/82">{projectPreview[1]?.summary}</p>
           </article>
 
           <article
             data-tilt
-            className="soft-card relative px-5 py-5 lg:absolute lg:left-[28%] lg:bottom-0 lg:w-[28rem] lg:rotate-[2deg] lg:rounded-[3rem_3rem_2rem_2rem]"
+            className="soft-card relative mt-5 max-w-[28rem] px-5 py-5 xl:absolute xl:left-[14%] xl:bottom-[4%] xl:mt-0 xl:w-[26rem] xl:rotate-[5deg] xl:rounded-[3rem_3rem_2rem_2rem]"
           >
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                工具与方式
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                工具
               </p>
               <div className="flex flex-wrap gap-2">
                 {siteContent.identity.workflow.slice(0, 3).map((item, index) => (
@@ -126,7 +126,7 @@ export function CoreShowcaseSection() {
               {toolPreview.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-sm font-medium text-white/86"
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-white/84"
                 >
                   {item}
                 </span>

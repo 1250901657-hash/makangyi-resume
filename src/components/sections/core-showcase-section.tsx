@@ -3,200 +3,136 @@ import { SectionHeading } from "@/components/section-heading";
 import { siteContent } from "@/data/site-content";
 
 const journeyPreview = siteContent.journey.slice(0, 3);
-const capabilityPreview = siteContent.capabilities.slice(0, 3);
 const projectPreview = siteContent.projects.slice(0, 2);
+const capabilityPreview = siteContent.capabilities.slice(0, 3);
 const toolPreview = Array.from(
   new Set(siteContent.skillGroups.flatMap((group) => group.items)),
-).slice(0, 10);
-
-const projectTints = [
-  "from-[#ffb23e]/30 via-[#ff6a00]/18 to-transparent",
-  "from-[#ff7a00]/28 via-[#ff3d00]/16 to-transparent",
-];
+).slice(0, 6);
 
 export function CoreShowcaseSection() {
   return (
-    <section id="showcase" className="section-shell py-24 md:py-32">
-      <div className="surface px-7 py-10 md:px-11 md:py-12">
+    <section id="showcase" className="section-shell py-20 md:py-32">
+      <div className="relative overflow-visible px-2 md:px-4">
         <div
           aria-hidden="true"
-          className="absolute left-[-4rem] top-[-2rem] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(41,87,255,0.18),transparent_72%)] blur-3xl"
+          className="absolute left-[8%] top-[14%] h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(36,72,255,0.24),transparent_72%)] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute right-[10%] top-[12%] h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.22),transparent_72%)] blur-3xl [animation:float-gentle_14s_ease-in-out_infinite]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute left-[12%] top-[18%] h-2 w-2 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.85)] [animation:pulse-soft_3.4s_ease-in-out_infinite]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute right-[16%] top-[28%] h-1.5 w-1.5 rounded-full bg-[#ff9d0a] shadow-[0_0_16px_rgba(255,157,10,0.9)] [animation:pulse-soft_4.2s_ease-in-out_infinite]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-[16%] top-[14%] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
+          className="absolute right-[14%] top-[18%] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.18),transparent_72%)] blur-3xl"
         />
 
-        <div className="relative grid gap-10 xl:grid-cols-[minmax(0,1.12fr)_minmax(360px,0.88fr)]">
-          <div className="space-y-9">
-            <SectionHeading
-              label="核心概览"
-              title="核心生态"
-              description="用同一个 IP，把经历、能力和项目串成一套更短也更统一的表达。"
-            />
+        <div className="max-w-[34rem]">
+          <SectionHeading
+            label="核心概览"
+            title="核心生态"
+            description="经历、能力和项目不再一排排码开，而是围绕同一个主角展开。"
+          />
+        </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
-              {journeyPreview.map((item, index) => (
-                <article key={item.phase} data-tilt className="soft-card px-5 py-5">
-                  <div
-                    aria-hidden="true"
-                    className={`absolute inset-x-4 top-0 h-px bg-gradient-to-r ${projectTints[index % 2]}`}
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute right-4 top-4 h-12 w-12 rounded-full border border-white/8 [animation:spin-slow_22s_linear_infinite]"
-                  />
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                    {item.phase}
-                  </p>
-                  <h3 className="mt-4 text-lg font-semibold leading-7 text-white">{item.period}</h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {item.abilities.slice(0, 2).map((ability) => (
-                      <span
-                        key={ability}
-                        className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-white/84"
-                      >
-                        {ability}
-                      </span>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2">
-              {projectPreview.map((project, index) => (
-                <article key={project.name} data-tilt className="soft-card overflow-hidden p-5">
-                  <div className="relative overflow-hidden rounded-[1.5rem] border border-white/8 bg-[rgba(255,255,255,0.02)] p-5">
-                    <div
-                      aria-hidden="true"
-                      className={`absolute inset-0 bg-gradient-to-br ${projectTints[index]} opacity-100`}
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-y-6 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/16 to-transparent"
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="absolute right-[-1rem] top-4 h-28 w-28 rounded-full border border-white/10 [animation:spin-slow_18s_linear_infinite]"
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="absolute left-6 top-6 h-16 w-16 rounded-full border border-white/6 [animation:spin-slow_24s_linear_infinite_reverse]"
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="absolute bottom-[-2rem] left-8 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.16),transparent_70%)] blur-2xl"
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="absolute right-[24%] top-[24%] h-2 w-2 rounded-full bg-white shadow-[0_0_14px_rgba(255,255,255,0.9)] [animation:pulse-soft_3.2s_ease-in-out_infinite]"
-                    />
-
-                    <div className="relative flex items-start justify-between gap-4">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                          {project.category}
-                        </p>
-                        <h3 className="mt-3 font-display text-[1.9rem] font-semibold leading-[1.04] text-white">
-                          {project.name}
-                        </h3>
-                      </div>
-                      <span className="text-xs uppercase tracking-[0.18em] text-muted">
-                        0{index + 1}
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="mt-5 text-sm leading-7 text-white/84">{project.summary}</p>
-                </article>
-              ))}
-            </div>
+        <div className="relative mt-14 flex flex-col gap-5 lg:min-h-[48rem]">
+          <div className="lg:absolute lg:left-[34%] lg:top-0 lg:z-20">
+            <BrandIp size="md" showSatellites className="mx-auto w-[15rem] sm:w-[18rem] xl:w-[22rem]" />
           </div>
 
-          <aside className="space-y-5">
-            <div data-tilt className="soft-card px-5 py-5 md:px-6 md:py-6">
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9d0a]/90 to-transparent"
-              />
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                  品牌主角
-                </p>
-                <BrandIp size="md" showSatellites={false} />
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2.5">
-                {capabilityPreview.map((item) => (
-                  <span
-                    key={item.title}
-                    className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-sm font-medium text-white/88"
-                  >
-                    {item.title}
-                  </span>
-                ))}
-              </div>
+          <article
+            data-tilt
+            className="soft-card relative px-5 py-5 lg:absolute lg:left-0 lg:top-6 lg:w-[21rem] lg:rotate-[-7deg] lg:rounded-[2rem_3rem_2rem_3rem]"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              经历路径
+            </p>
+            <h3 className="mt-3 font-display text-[1.7rem] leading-[1.04] text-white">
+              {journeyPreview[0]?.period}
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {journeyPreview[0]?.abilities.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-white/86"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
+          </article>
 
-            <div data-tilt className="soft-card px-5 py-5 md:px-6 md:py-6">
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ff6a00]/90 to-transparent"
-              />
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                工作方式
+          <article
+            data-tilt
+            className="soft-card relative px-5 py-5 lg:absolute lg:left-[6%] lg:top-[16rem] lg:w-[18rem] lg:rotate-[6deg] lg:rounded-[3rem_2rem_3rem_2rem]"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              能力摘要
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {capabilityPreview.map((item) => (
+                <span
+                  key={item.title}
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-sm font-medium text-white/86"
+                >
+                  {item.title}
+                </span>
+              ))}
+            </div>
+          </article>
+
+          <article
+            data-tilt
+            className="soft-card relative px-5 py-5 lg:absolute lg:right-[2%] lg:top-0 lg:w-[24rem] lg:rotate-[5deg] lg:rounded-[2rem_3rem_2rem_3.5rem]"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              项目方向 01
+            </p>
+            <h3 className="mt-3 font-display text-[2rem] leading-[1.02] text-white">
+              {projectPreview[0]?.name}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-white/84">{projectPreview[0]?.summary}</p>
+          </article>
+
+          <article
+            data-tilt
+            className="soft-card relative px-5 py-5 lg:absolute lg:right-[8%] lg:top-[17rem] lg:w-[20rem] lg:rotate-[-6deg] lg:rounded-[3rem_2rem_2rem_3rem]"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              项目方向 02
+            </p>
+            <h3 className="mt-3 font-display text-[1.7rem] leading-[1.04] text-white">
+              {projectPreview[1]?.name}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-white/84">{projectPreview[1]?.summary}</p>
+          </article>
+
+          <article
+            data-tilt
+            className="soft-card relative px-5 py-5 lg:absolute lg:left-[28%] lg:bottom-0 lg:w-[28rem] lg:rotate-[2deg] lg:rounded-[3rem_3rem_2rem_2rem]"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                工具与方式
               </p>
-
-              <div className="mt-5 flex flex-wrap gap-2.5">
+              <div className="flex flex-wrap gap-2">
                 {siteContent.identity.workflow.slice(0, 3).map((item, index) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white/88"
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-white/84"
                   >
-                    0{index + 1} {item}
-                  </span>
-                ))}
-              </div>
-
-              <p className="mt-5 text-sm leading-7 text-white/82">
-                从视觉、展示到执行，我更擅长把复杂事情整理成可以直接推进的结果。
-              </p>
-            </div>
-
-            <div data-tilt className="soft-card px-5 py-5 md:px-6 md:py-6">
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ffb23e]/90 to-transparent"
-              />
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                技能与工具
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2.5">
-                {toolPreview.slice(0, 6).map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white/88"
-                  >
-                    {item}
+                    0{index + 1}
                   </span>
                 ))}
               </div>
             </div>
-          </aside>
+
+            <div className="mt-4 flex flex-wrap gap-2.5">
+              {toolPreview.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-sm font-medium text-white/86"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </article>
         </div>
       </div>
     </section>

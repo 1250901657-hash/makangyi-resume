@@ -374,6 +374,21 @@ body::after {
   }
 }
 
+@keyframes float-wide {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  35% {
+    transform: translate3d(8px, -12px, 0) rotate(1.2deg);
+  }
+
+  65% {
+    transform: translate3d(-10px, 10px, 0) rotate(-1deg);
+  }
+}
+
 @keyframes grid-drift {
   0% {
     background-position: 0 0, 0 0;

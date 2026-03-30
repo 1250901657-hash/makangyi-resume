@@ -25,7 +25,9 @@ export function BrandIp({
   const clipId = `brand-clip-${suffix}`;
 
   return (
-    <div className={`relative aspect-square ${sizeClassMap[size]} ${className}`}>
+    <div
+      className={`relative aspect-square ${sizeClassMap[size]} ${className} [animation:float-wide_14s_ease-in-out_infinite]`}
+    >
       <div className="absolute inset-[10%] rounded-full bg-[radial-gradient(circle,rgba(255,142,24,0.24),transparent_56%)] blur-3xl" />
       <svg viewBox="0 0 640 640" className="relative z-10 h-full w-full" aria-hidden="true">
         <defs>
@@ -54,7 +56,7 @@ export function BrandIp({
         </defs>
 
         {showSatellites ? (
-          <>
+          <g className="[animation:float-gentle_13s_ease-in-out_infinite]">
             <g transform="translate(132 138)" fill="#102a89">
               <circle cx="34" cy="34" r="34" fill="#18328f" />
               <circle cx="18" cy="25" r="6" fill="#ffb14f" />
@@ -92,7 +94,7 @@ export function BrandIp({
               <path d="M22 0c-12 0-20 10-20 26s8 26 20 26" stroke="#18328f" strokeWidth="10" strokeLinecap="round" fill="none" />
               <path d="M58 0c12 0 20 10 20 26s-8 26-20 26" stroke="#18328f" strokeWidth="10" strokeLinecap="round" fill="none" />
             </g>
-          </>
+          </g>
         ) : null}
 
         <circle cx="320" cy="346" r="165" fill={`url(#${baseGradientId})`} />
@@ -160,7 +162,12 @@ export function BrandIp({
           <rect x="484" y="246" width="14" height="14" rx="2" />
         </g>
 
-        <g fill="none" stroke={`url(#${lineGradientId})`} strokeWidth="4">
+        <g
+          fill="none"
+          stroke={`url(#${lineGradientId})`}
+          strokeWidth="4"
+          className="[transform-origin:center] [animation:spin-slow_28s_linear_infinite]"
+        >
           <ellipse cx="320" cy="254" rx="196" ry="58" />
           <ellipse cx="320" cy="262" rx="216" ry="78" transform="rotate(-11 320 262)" />
           <ellipse cx="320" cy="260" rx="222" ry="72" transform="rotate(13 320 260)" />

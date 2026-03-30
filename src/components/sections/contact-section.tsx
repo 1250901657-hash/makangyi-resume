@@ -4,19 +4,16 @@ import { siteContent } from "@/data/site-content";
 function ContactLink({
   label,
   value,
-  hint,
   href,
 }: {
   label: string;
   value: string;
-  hint: string;
   href?: string;
 }) {
   const content = (
     <>
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{label}</p>
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">{label}</p>
       <p className="mt-3 break-all text-base font-semibold text-white">{value}</p>
-      <p className="mt-2 text-sm leading-7 text-muted">{hint}</p>
     </>
   );
 
@@ -32,7 +29,7 @@ function ContactLink({
     <a
       href={href}
       data-tilt
-      className="soft-card block px-5 py-5 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-white/[0.05]"
+      className="soft-card block px-5 py-5 hover:border-accent/30 hover:bg-white/[0.05]"
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
     >
@@ -44,92 +41,102 @@ function ContactLink({
 export function ContactSection() {
   const emailItem = siteContent.contact.items.find((item) => item.label === "邮箱");
   const visibleItems = siteContent.contact.items.filter((item) => item.href);
-  const contactIntro = "如果你想聊合作、工作机会或一起把想法做成作品，欢迎直接联系我。";
 
   return (
-    <section id="contact" className="section-shell pb-28 pt-24 md:pb-32 md:pt-28">
-      <div className="surface overflow-hidden px-7 py-10 md:px-11 md:py-12">
+    <section id="contact" className="section-shell pb-28 pt-20 md:pb-36 md:pt-24">
+      <div className="relative overflow-visible px-2 md:px-4">
         <div
           aria-hidden="true"
-          className="absolute right-[-4rem] top-[-5rem] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.18),transparent_72%)] blur-3xl"
+          className="absolute left-[10%] top-8 h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(39,79,255,0.22),transparent_72%)] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute bottom-[-4rem] left-[20%] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(41,87,255,0.18),transparent_72%)] blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-[18%] top-[12%] h-px bg-gradient-to-r from-transparent via-white/24 to-transparent"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute right-[12%] top-[16%] h-2 w-2 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.9)] [animation:pulse-soft_3.2s_ease-in-out_infinite]"
+          className="absolute right-[6%] bottom-0 h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.22),transparent_72%)] blur-3xl"
         />
 
-        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,400px)] lg:gap-12">
-          <div className="space-y-6">
+        <div className="grid gap-10 xl:grid-cols-[minmax(0,0.86fr)_minmax(420px,1.14fr)] xl:items-end">
+          <div className="max-w-[34rem] space-y-7">
             <div className="space-y-4">
               <span className="eyebrow">联系方式</span>
-              <div className="space-y-3">
-                <h2 className="font-display text-[2.35rem] font-semibold leading-[1.02] tracking-tight text-white md:text-[3.5rem]">
-                  欢迎联系我
-                </h2>
-                <p className="max-w-2xl text-base leading-8 text-muted md:text-lg">
-                  {contactIntro}
-                </p>
-              </div>
+              <h2 className="font-display text-[clamp(3rem,7vw,5rem)] leading-[0.94] text-white">
+                继续聊下去
+              </h2>
+              <p className="text-base leading-8 text-white/84 md:text-lg">
+                合作、工作机会，或者一起把一个想法做成真正能看的作品。
+              </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
-              {visibleItems.map((item) => (
-                <ContactLink key={item.label} {...item} />
+            <div className="grid gap-4 sm:grid-cols-2">
+              {visibleItems.map((item, index) => (
+                <div
+                  key={item.label}
+                  className={index === 1 ? "sm:translate-y-8" : index === 2 ? "sm:-translate-y-4" : ""}
+                >
+                  <ContactLink label={item.label} value={item.value} href={item.href} />
+                </div>
               ))}
             </div>
           </div>
 
-          <aside data-tilt className="soft-card flex flex-col justify-between p-6 md:p-7">
+          <div className="relative min-h-[26rem] md:min-h-[32rem] xl:min-h-[36rem]">
+            <div className="absolute right-[-4%] bottom-[-4%] z-10">
+              <BrandIp
+                size="lg"
+                showSatellites={false}
+                className="w-[18rem] sm:w-[22rem] xl:w-[28rem]"
+              />
+            </div>
+
             <div
-              aria-hidden="true"
-              className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9d0a]/90 to-transparent"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute right-[-2rem] top-8 h-32 w-32 rounded-full border border-white/8 [animation:spin-slow_18s_linear_infinite]"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute bottom-[-2rem] right-[12%] h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(255,166,55,0.2),transparent_72%)] blur-2xl"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-y-10 right-[30%] w-px bg-gradient-to-b from-transparent via-white/12 to-transparent"
-            />
-            <div className="space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+              data-tilt
+              className="soft-card absolute left-[0%] top-[4%] z-20 w-56 rotate-[-7deg] rounded-[2rem_3rem_2rem_3rem] px-5 py-5"
+            >
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
                 下一步
               </p>
-              <BrandIp size="md" showSatellites={false} className="mx-auto" />
-              <h3 className="font-display text-2xl font-semibold leading-[1.08] tracking-tight text-white">
-                如果你正在寻找兼具表达、业务理解与执行意识的人，我们可以继续聊下去。
-              </h3>
-              <p className="text-sm leading-7 text-muted">
-                适合求职沟通、合作交流，或一起做更有完成度的网页与内容项目。
+              <p className="mt-3 text-sm leading-7 text-white/86">
+                你可以直接发邮件，也可以先从 GitHub 看我正在做的东西。
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3 pt-2">
-              <a href={emailItem?.href ?? "#"} className="btn-primary">
-                发送邮件
-              </a>
-              <button
-                type="button"
-                disabled
-                className="btn-secondary cursor-not-allowed opacity-70"
-              >
-                {siteContent.contact.resumeLabel}
-              </button>
+            <div
+              data-tilt
+              className="soft-card absolute right-[12%] top-[0%] z-20 w-44 rotate-[8deg] rounded-[3rem_2rem_3rem_2rem] px-4 py-4"
+            >
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                关键词
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-white/84">
+                  合作
+                </span>
+                <span className="rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-white/84">
+                  求职
+                </span>
+                <span className="rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-white/84">
+                  项目
+                </span>
+              </div>
             </div>
-          </aside>
+
+            <div
+              data-tilt
+              className="soft-card absolute left-[10%] bottom-[8%] z-20 w-60 rotate-[5deg] rounded-[3rem_3rem_2rem_2rem] px-5 py-5"
+            >
+              <div className="flex flex-wrap gap-3">
+                <a href={emailItem?.href ?? "#"} className="btn-primary">
+                  发送邮件
+                </a>
+                <button
+                  type="button"
+                  disabled
+                  className="btn-secondary cursor-not-allowed opacity-70"
+                >
+                  {siteContent.contact.resumeLabel}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

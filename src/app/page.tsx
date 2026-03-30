@@ -1,10 +1,6 @@
-import { AboutSection } from "@/components/sections/about-section";
-import { CapabilitiesSection } from "@/components/sections/capabilities-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { CoreShowcaseSection } from "@/components/sections/core-showcase-section";
 import { HeroSection } from "@/components/sections/hero-section";
-import { JourneySection } from "@/components/sections/journey-section";
-import { ProjectsSection } from "@/components/sections/projects-section";
-import { SkillsSection } from "@/components/sections/skills-section";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/data/site-content";
 
@@ -15,11 +11,7 @@ export default function Home() {
 
       <main className="flex-1">
         <HeroSection />
-        <JourneySection />
-        <CapabilitiesSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <AboutSection />
+        <CoreShowcaseSection />
         <ContactSection />
       </main>
 

@@ -80,6 +80,7 @@ body::after {
     radial-gradient(circle at 42% 88%, rgba(183, 255, 108, 0.06), transparent 16%);
   filter: blur(72px);
   opacity: 0.95;
+  animation: aura-shift 24s ease-in-out infinite;
 }
 
 ::selection {
@@ -147,6 +148,18 @@ body::after {
     z-index: -1;
   }
 
+  .surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 78%);
+    pointer-events: none;
+  }
+
   .soft-card {
     position: relative;
     overflow: hidden;
@@ -171,6 +184,32 @@ body::after {
     background: radial-gradient(circle, rgba(70, 217, 255, 0.16), transparent 70%);
     filter: blur(20px);
     pointer-events: none;
+  }
+
+  .soft-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      110deg,
+      transparent 0%,
+      transparent 36%,
+      rgba(255, 255, 255, 0.06) 48%,
+      transparent 58%,
+      transparent 100%
+    );
+    opacity: 0;
+    transform: translateX(-26%);
+    transition:
+      opacity 260ms ease,
+      transform 260ms ease;
+    pointer-events: none;
+  }
+
+  .soft-card:hover::after {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .eyebrow {
@@ -287,6 +326,31 @@ body::after {
   50% {
     opacity: 1;
     transform: scale(1.05);
+  }
+}
+
+@keyframes aura-shift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  35% {
+    transform: translate3d(2%, -1%, 0) scale(1.04);
+  }
+
+  68% {
+    transform: translate3d(-1%, 2%, 0) scale(0.98);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 

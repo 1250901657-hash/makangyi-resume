@@ -1,5 +1,11 @@
 import { siteContent } from "@/data/site-content";
 
+const compactNavigation = [
+  { href: "#top", label: "首页" },
+  { href: "#showcase", label: "核心概览" },
+  { href: "#contact", label: "联系" },
+];
+
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 px-4 pt-4 md:px-7 md:pt-6 xl:px-8">
@@ -16,7 +22,7 @@ export function SiteHeader() {
             </a>
 
             <nav className="hidden items-center gap-1 lg:flex">
-              {siteContent.navigation.map((link) => (
+              {compactNavigation.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}

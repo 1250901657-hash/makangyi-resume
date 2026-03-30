@@ -2,6 +2,8 @@ import { siteContent } from "@/data/site-content";
 
 export function HeroSection() {
   const { identity } = siteContent;
+  const heroIntro =
+    "从美工、电商到工厂 PE，再到 AI 网页与内容实践，我更擅长把审美、业务理解和执行力放进同一条工作链路里。";
 
   return (
     <section id="top" className="section-shell pb-24 pt-6 md:pb-32 md:pt-8">
@@ -17,6 +19,10 @@ export function HeroSection() {
         <div
           aria-hidden="true"
           className="absolute bottom-[-10%] left-[38%] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(183,255,108,0.12),transparent_68%)] blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-[12%] top-[14%] h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-80"
         />
 
         <div className="relative grid gap-8 xl:grid-cols-[minmax(0,1.22fr)_minmax(330px,0.78fr)] xl:items-start">
@@ -57,14 +63,14 @@ export function HeroSection() {
                   {identity.role}
                 </p>
                 <p className="max-w-2xl text-base leading-8 text-muted md:text-lg">
-                  {identity.intro}
+                  {heroIntro}
                 </p>
               </div>
             </div>
 
             <div className="fade-up flex flex-wrap gap-3 [animation-delay:120ms]">
-              <a href="#journey" className="btn-primary">
-                查看经历路径
+              <a href="#showcase" className="btn-primary">
+                查看核心概览
               </a>
               <a href="#contact" className="btn-secondary">
                 联系我
@@ -95,46 +101,78 @@ export function HeroSection() {
           </div>
 
           <aside className="grid gap-4">
-            <div className="soft-card fade-up px-5 py-5 md:px-6 md:py-6 [animation-delay:140ms]">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                当前方向
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/88 md:text-[0.98rem]">
-                {identity.currentFocus}
-              </p>
-            </div>
+            <div className="soft-card fade-up relative min-h-[22rem] overflow-hidden px-5 py-5 md:px-6 md:py-6 [animation-delay:140ms]">
+              <div
+                aria-hidden="true"
+                className="absolute left-[10%] top-[12%] h-28 w-28 rounded-full border border-white/10 [animation:spin-slow_18s_linear_infinite]"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute right-[12%] top-[18%] h-[4.5rem] w-[4.5rem] rounded-full border border-white/10"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-[18%] top-[18%] h-48 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.16),transparent_70%)] blur-3xl"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute bottom-[-4.5rem] left-1/2 h-72 w-56 -translate-x-1/2 rounded-[45%] bg-[linear-gradient(180deg,rgba(255,248,218,0.95),rgba(255,178,102,0.72)_36%,rgba(255,130,74,0.48)_74%,rgba(255,130,74,0.08)_100%)] shadow-[0_0_48px_rgba(255,170,92,0.22)] [animation:pulse-soft_8s_ease-in-out_infinite]"
+              />
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-2">
-              {identity.workflow.map((item, index) => (
-                <div
-                  key={item}
-                  className="soft-card fade-up min-h-32 px-4 py-4 [animation-delay:220ms]"
-                >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted">
-                    0{index + 1}
+              <div className="relative flex h-full flex-col justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                    当前方向
                   </p>
-                  <p className="mt-4 text-sm font-medium leading-7 text-white/90">{item}</p>
+                  <p className="mt-4 max-w-xs text-sm leading-7 text-white/88">
+                    {identity.currentFocus}
+                  </p>
                 </div>
-              ))}
+
+                <div className="flex flex-wrap gap-2.5">
+                  {identity.highlights.slice(0, 3).map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-black/25 px-3 py-2 text-xs font-medium text-white/88 backdrop-blur-xl"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="soft-card fade-up px-5 py-5 md:px-6 md:py-6 [animation-delay:320ms]">
-              <div className="flex items-center justify-between gap-3">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="soft-card fade-up px-5 py-5 [animation-delay:220ms]">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                  核心优势
+                  工作方式
                 </p>
-                <span className="text-[11px] uppercase tracking-[0.22em] text-muted">Highlights</span>
+                <div className="mt-4 flex flex-wrap gap-2.5">
+                  {identity.workflow.map((item, index) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white/88"
+                    >
+                      0{index + 1} {item}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="mt-5 space-y-3">
-                {identity.highlights.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3.5 text-sm leading-7 text-white/88"
-                  >
-                    {item}
-                  </div>
-                ))}
+              <div className="soft-card fade-up px-5 py-5 [animation-delay:320ms]">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                  快速摘要
+                </p>
+                <div className="mt-4 space-y-3">
+                  {identity.highlights.slice(0, 2).map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3 text-sm leading-7 text-white/88"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </aside>

@@ -37,6 +37,7 @@ function ContactLink({
 
 export function ContactSection() {
   const emailItem = siteContent.contact.items.find((item) => item.label === "邮箱");
+  const visibleItems = siteContent.contact.items.filter((item) => item.href);
 
   return (
     <section id="contact" className="section-shell pb-24 pt-20 md:pb-28 md:pt-24">
@@ -64,8 +65,8 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {siteContent.contact.items.map((item) => (
+            <div className="grid gap-4 md:grid-cols-3">
+              {visibleItems.map((item) => (
                 <ContactLink key={item.label} {...item} />
               ))}
             </div>

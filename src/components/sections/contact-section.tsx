@@ -5,21 +5,23 @@ function ContactLink({
   label,
   value,
   href,
+  className,
 }: {
   label: string;
   value: string;
   href?: string;
+  className?: string;
 }) {
   const content = (
     <>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">{label}</p>
-      <p className="mt-3 break-all text-base font-semibold text-white">{value}</p>
+      <p className="micro-label text-accent">{label}</p>
+      <p className="mt-3 break-all text-[0.96rem] font-semibold tracking-[0.02em] text-white">{value}</p>
     </>
   );
 
   if (!href) {
     return (
-      <div data-tilt className="soft-card px-5 py-5">
+      <div data-tilt className={className ?? "px-5 py-5"}>
         {content}
       </div>
     );
@@ -29,7 +31,7 @@ function ContactLink({
     <a
       href={href}
       data-tilt
-      className="soft-card block px-5 py-5 hover:border-accent/30 hover:bg-white/[0.05]"
+      className={className ?? "block px-5 py-5"}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
     >
@@ -78,14 +80,29 @@ export function ContactSection() {
               />
             </div>
 
-            <div className="absolute inset-x-0 bottom-0 grid gap-4 md:grid-cols-3">
-              {visibleItems.map((item) => {
-                return (
-                  <div key={item.label}>
-                    <ContactLink label={item.label} value={item.value} href={item.href} />
-                  </div>
-                );
-              })}
+            <div className="absolute inset-x-0 bottom-0">
+              <div className="surface overflow-hidden rounded-[1.6rem]">
+                <div className="grid md:grid-cols-3 md:divide-x md:divide-white/10">
+                  {visibleItems.map((item, index) => {
+                    const cellClassName =
+                      "block px-5 py-5 hover:bg-white/[0.04] hover:border-transparent";
+
+                    return (
+                      <div
+                        key={item.label}
+                        className={index > 0 ? "border-t border-white/10 md:border-t-0" : undefined}
+                      >
+                        <ContactLink
+                          label={item.label}
+                          value={item.value}
+                          href={item.href}
+                          className={cellClassName}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>

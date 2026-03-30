@@ -16,28 +16,28 @@ export function SiteHeader() {
             <a href="#top" className="flex min-w-0 items-center gap-3">
               <BrandIp size="sm" showSatellites={false} className="shrink-0" />
               <div className="min-w-0 space-y-1">
-                <p className="font-display text-sm font-semibold uppercase tracking-[0.26em] text-white">
+                <p className="text-[0.95rem] font-semibold tracking-[0.06em] text-white">
                   {siteContent.identity.name}
                 </p>
-                <p className="truncate text-xs text-white/78 md:text-sm">
+                <p className="micro-label truncate text-white/58 md:text-[11px]">
                   {siteContent.identity.englishName}
                 </p>
               </div>
             </a>
 
-            <nav className="hidden items-center gap-1 lg:flex">
+            <nav className="hidden items-center gap-1.5 lg:flex">
               {compactNavigation.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="rounded-full px-3.5 py-2 text-sm text-muted hover:bg-white/[0.05] hover:text-white"
+                  className="rounded-full px-3.5 py-2 text-[13px] font-medium tracking-[0.04em] text-white/70 hover:bg-white/[0.05] hover:text-white"
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
 
-            <a href="#contact" className="btn-primary px-4 py-2.5 text-sm">
+            <a href="#contact" className="btn-primary px-4 py-2.5 text-[13px]">
               联系我
             </a>
           </div>

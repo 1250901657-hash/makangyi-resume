@@ -31,7 +31,7 @@ export function CoreShowcaseSection() {
               <BrandIp size="md" showSatellites={false} className="w-[9rem]" />
             </div>
 
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+            <p className="micro-label text-accent">
               主案例 / 01
             </p>
             <h3 className="mt-4 max-w-[22rem] font-display text-[clamp(1.85rem,3.4vw,3rem)] leading-[0.98] text-white">
@@ -42,71 +42,53 @@ export function CoreShowcaseSection() {
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {projectPreview[0]?.tags.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[11px] font-medium text-white/84"
-                >
+                <span key={item} className="meta-pill">
                   {item}
                 </span>
               ))}
             </div>
           </article>
 
-          <div className="grid gap-4">
-            <article data-tilt className="soft-card px-4 py-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
-                能力
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {capabilityPreview.slice(0, 2).map((item) => (
-                  <span
-                    key={item.title}
-                    className="rounded-full bg-white/[0.05] px-3 py-1.5 text-[11px] text-white/84"
-                  >
-                    {item.title}
-                  </span>
-                ))}
+          <article data-tilt className="soft-card overflow-hidden">
+            <div className="divide-y divide-white/10">
+              <div className="space-y-3 px-5 py-5">
+                <p className="micro-label text-accent">能力</p>
+                <div className="flex flex-wrap gap-2">
+                  {capabilityPreview.slice(0, 2).map((item) => (
+                    <span key={item.title} className="meta-pill">
+                      {item.title}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </article>
 
-            <article data-tilt className="soft-card px-4 py-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
-                阶段
-              </p>
-              <div className="mt-3 space-y-2">
-                {journeyPreview.map((item) => (
-                  <p key={item.phase} className="text-[11px] leading-6 text-white/84">
-                    {item.period}
-                  </p>
-                ))}
+              <div className="space-y-3 px-5 py-5">
+                <p className="micro-label text-accent">阶段</p>
+                <div className="space-y-2">
+                  {journeyPreview.map((item) => (
+                    <p key={item.phase} className="text-[0.82rem] leading-6 text-white/82">
+                      {item.period}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </article>
 
-            <article data-tilt className="soft-card px-4 py-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
-                项目方向 / 02
-              </p>
-              <h3 className="mt-3 font-display text-[1.32rem] leading-[1.08] text-white">
-                {projectPreview[1]?.name}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-white/82">{projectPreview[1]?.summary}</p>
-            </article>
-          </div>
+              <div className="space-y-3 px-5 py-5">
+                <p className="micro-label text-accent">项目方向 / 02</p>
+                <h3 className="font-display text-[1.22rem] leading-[1.12] text-white">
+                  {projectPreview[1]?.name}
+                </h3>
+                <p className="text-[0.88rem] leading-7 text-white/82">{projectPreview[1]?.summary}</p>
+              </div>
+            </div>
+          </article>
 
-          <article
-            data-tilt
-            className="soft-card px-5 py-5 xl:col-span-2"
-          >
+          <article data-tilt className="soft-card px-5 py-5 xl:col-span-2">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
-                工具
-              </p>
+              <p className="micro-label text-accent">工具</p>
               <div className="flex flex-wrap gap-2">
                 {siteContent.identity.workflow.slice(0, 3).map((item, index) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-white/84"
-                  >
+                  <span key={item} className="meta-pill">
                     0{index + 1}
                   </span>
                 ))}
@@ -115,10 +97,7 @@ export function CoreShowcaseSection() {
 
             <div className="mt-4 flex flex-wrap gap-2.5">
               {toolPreview.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[11px] font-medium text-white/84"
-                >
+                <span key={item} className="meta-pill">
                   {item}
                 </span>
               ))}

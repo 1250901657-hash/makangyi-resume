@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Noto_Sans_SC, Space_Grotesk } from "next/font/google";
+import { JetBrains_Mono, Noto_Sans_SC } from "next/font/google";
 
 import { PointerEffects } from "@/components/pointer-effects";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -10,13 +10,6 @@ import "./globals.css";
 const notoSansSC = Noto_Sans_SC({
   variable: "--font-body",
   weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -59,7 +52,7 @@ export default function RootLayout({
     <html
       lang="zh-CN"
       suppressHydrationWarning
-      className={`${notoSansSC.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${notoSansSC.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider

@@ -1,3 +1,4 @@
+import { BrandIp } from "@/components/brand-ip";
 import { siteContent } from "@/data/site-content";
 
 const compactNavigation = [
@@ -12,13 +13,16 @@ export function SiteHeader() {
       <div className="section-shell">
         <div className="surface rounded-full px-4 py-3 md:px-6">
           <div className="flex items-center justify-between gap-4">
-            <a href="#top" className="min-w-0 space-y-1">
-              <p className="font-display text-sm font-semibold uppercase tracking-[0.26em] text-white">
-                {siteContent.identity.name}
-              </p>
-              <p className="truncate text-xs text-muted md:text-sm">
-                {siteContent.identity.englishName}
-              </p>
+            <a href="#top" className="flex min-w-0 items-center gap-3">
+              <BrandIp size="sm" showSatellites={false} className="shrink-0" />
+              <div className="min-w-0 space-y-1">
+                <p className="font-display text-sm font-semibold uppercase tracking-[0.26em] text-white">
+                  {siteContent.identity.name}
+                </p>
+                <p className="truncate text-xs text-white/78 md:text-sm">
+                  {siteContent.identity.englishName}
+                </p>
+              </div>
             </a>
 
             <nav className="hidden items-center gap-1 lg:flex">

@@ -1,3 +1,4 @@
+import { BrandIp } from "@/components/brand-ip";
 import { siteContent } from "@/data/site-content";
 
 function ContactLink({
@@ -43,6 +44,7 @@ function ContactLink({
 export function ContactSection() {
   const emailItem = siteContent.contact.items.find((item) => item.label === "邮箱");
   const visibleItems = siteContent.contact.items.filter((item) => item.href);
+  const contactIntro = "如果你想聊合作、工作机会或一起把想法做成作品，欢迎直接联系我。";
 
   return (
     <section id="contact" className="section-shell pb-28 pt-24 md:pb-32 md:pt-28">
@@ -70,10 +72,10 @@ export function ContactSection() {
               <span className="eyebrow">联系方式</span>
               <div className="space-y-3">
                 <h2 className="font-display text-[2.35rem] font-semibold leading-[1.02] tracking-tight text-white md:text-[3.5rem]">
-                  欢迎联系我，聊工作机会、合作项目，或一起把想法做成作品。
+                  欢迎联系我
                 </h2>
                 <p className="max-w-2xl text-base leading-8 text-muted md:text-lg">
-                  {siteContent.contact.intro}
+                  {contactIntro}
                 </p>
               </div>
             </div>
@@ -106,11 +108,12 @@ export function ContactSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                 下一步
               </p>
+              <BrandIp size="md" showSatellites={false} className="mx-auto" />
               <h3 className="font-display text-2xl font-semibold leading-[1.08] tracking-tight text-white">
                 如果你正在寻找兼具表达、业务理解与执行意识的人，我们可以继续聊下去。
               </h3>
               <p className="text-sm leading-7 text-muted">
-                适合求职沟通、合作交流，或一起做更有完成度的网页、内容和轻量项目。
+                适合求职沟通、合作交流，或一起做更有完成度的网页与内容项目。
               </p>
             </div>
 

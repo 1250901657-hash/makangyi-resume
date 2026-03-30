@@ -1,3 +1,4 @@
+import { BrandIp } from "@/components/brand-ip";
 import { SectionHeading } from "@/components/section-heading";
 import { siteContent } from "@/data/site-content";
 
@@ -42,8 +43,8 @@ export function CoreShowcaseSection() {
           <div className="space-y-9">
             <SectionHeading
               label="核心概览"
-              title="把重点压缩到一屏里，但让视觉和节奏更强"
-              description="我把原来的经历、能力、项目和工具浓缩成一组更短、更好读的展示卡，减少信息负担，但保留你的核心判断力。"
+              title="核心生态"
+              description="用同一个 IP，把经历、能力和项目串成一套更短也更统一的表达。"
             />
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -61,7 +62,16 @@ export function CoreShowcaseSection() {
                     {item.phase}
                   </p>
                   <h3 className="mt-4 text-lg font-semibold leading-7 text-white">{item.period}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted">{item.connection}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {item.abilities.slice(0, 2).map((ability) => (
+                      <span
+                        key={ability}
+                        className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-white/84"
+                      >
+                        {ability}
+                      </span>
+                    ))}
+                  </div>
                 </article>
               ))}
             </div>
@@ -110,7 +120,7 @@ export function CoreShowcaseSection() {
                     </div>
                   </div>
 
-                  <p className="mt-5 text-sm leading-7 text-muted">{project.highlight}</p>
+                  <p className="mt-5 text-sm leading-7 text-white/84">{project.summary}</p>
                 </article>
               ))}
             </div>
@@ -122,19 +132,21 @@ export function CoreShowcaseSection() {
                 aria-hidden="true"
                 className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9d0a]/90 to-transparent"
               />
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                我能做什么
-              </p>
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                  品牌主角
+                </p>
+                <BrandIp size="md" showSatellites={false} />
+              </div>
 
-              <div className="mt-5 space-y-3">
+              <div className="mt-5 flex flex-wrap gap-2.5">
                 {capabilityPreview.map((item) => (
-                  <div
+                  <span
                     key={item.title}
-                    className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4"
+                    className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-sm font-medium text-white/88"
                   >
-                    <p className="text-sm font-semibold text-white">{item.title}</p>
-                    <p className="mt-2 text-sm leading-7 text-muted">{item.focus}</p>
-                  </div>
+                    {item.title}
+                  </span>
                 ))}
               </div>
             </div>
@@ -149,7 +161,7 @@ export function CoreShowcaseSection() {
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2.5">
-                {siteContent.identity.workflow.map((item, index) => (
+                {siteContent.identity.workflow.slice(0, 3).map((item, index) => (
                   <span
                     key={item}
                     className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white/88"
@@ -159,7 +171,9 @@ export function CoreShowcaseSection() {
                 ))}
               </div>
 
-              <p className="mt-5 text-sm leading-7 text-muted">{siteContent.about.text}</p>
+              <p className="mt-5 text-sm leading-7 text-white/82">
+                从视觉、展示到执行，我更擅长把复杂事情整理成可以直接推进的结果。
+              </p>
             </div>
 
             <div data-tilt className="soft-card px-5 py-5 md:px-6 md:py-6">
@@ -172,7 +186,7 @@ export function CoreShowcaseSection() {
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2.5">
-                {toolPreview.map((item) => (
+                {toolPreview.slice(0, 6).map((item) => (
                   <span
                     key={item}
                     className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white/88"

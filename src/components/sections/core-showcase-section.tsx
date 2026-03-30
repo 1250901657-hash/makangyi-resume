@@ -9,8 +9,8 @@ const toolPreview = Array.from(
 ).slice(0, 10);
 
 const projectTints = [
-  "from-[#46d9ff]/26 via-[#6ba8ff]/14 to-transparent",
-  "from-[#8a6dff]/24 via-[#46d9ff]/12 to-transparent",
+  "from-[#ffb23e]/30 via-[#ff6a00]/18 to-transparent",
+  "from-[#ff7a00]/28 via-[#ff3d00]/16 to-transparent",
 ];
 
 export function CoreShowcaseSection() {
@@ -19,11 +19,11 @@ export function CoreShowcaseSection() {
       <div className="surface px-7 py-10 md:px-11 md:py-12">
         <div
           aria-hidden="true"
-          className="absolute left-[-4rem] top-[-2rem] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(70,217,255,0.14),transparent_72%)] blur-3xl"
+          className="absolute left-[-4rem] top-[-2rem] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(41,87,255,0.18),transparent_72%)] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute right-[10%] top-[12%] h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(138,109,255,0.18),transparent_72%)] blur-3xl [animation:float-gentle_14s_ease-in-out_infinite]"
+          className="absolute right-[10%] top-[12%] h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.22),transparent_72%)] blur-3xl [animation:float-gentle_14s_ease-in-out_infinite]"
         />
         <div
           aria-hidden="true"
@@ -31,7 +31,7 @@ export function CoreShowcaseSection() {
         />
         <div
           aria-hidden="true"
-          className="absolute right-[16%] top-[28%] h-1.5 w-1.5 rounded-full bg-[#7ce7ff] shadow-[0_0_16px_rgba(124,231,255,0.9)] [animation:pulse-soft_4.2s_ease-in-out_infinite]"
+          className="absolute right-[16%] top-[28%] h-1.5 w-1.5 rounded-full bg-[#ff9d0a] shadow-[0_0_16px_rgba(255,157,10,0.9)] [animation:pulse-soft_4.2s_ease-in-out_infinite]"
         />
         <div
           aria-hidden="true"
@@ -120,7 +120,7 @@ export function CoreShowcaseSection() {
             <div data-tilt className="soft-card px-5 py-5 md:px-6 md:py-6">
               <div
                 aria-hidden="true"
-                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#7ce7ff]/90 to-transparent"
+                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9d0a]/90 to-transparent"
               />
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                 我能做什么
@@ -142,7 +142,7 @@ export function CoreShowcaseSection() {
             <div data-tilt className="soft-card px-5 py-5 md:px-6 md:py-6">
               <div
                 aria-hidden="true"
-                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#a68cff]/90 to-transparent"
+                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ff6a00]/90 to-transparent"
               />
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                 工作方式
@@ -165,7 +165,7 @@ export function CoreShowcaseSection() {
             <div data-tilt className="soft-card px-5 py-5 md:px-6 md:py-6">
               <div
                 aria-hidden="true"
-                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#b7ff6c]/90 to-transparent"
+                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ffb23e]/90 to-transparent"
               />
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                 技能与工具

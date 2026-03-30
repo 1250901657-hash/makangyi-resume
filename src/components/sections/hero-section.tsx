@@ -10,15 +10,15 @@ export function HeroSection() {
       <div className="surface px-6 py-7 md:px-10 md:py-10 xl:px-12 xl:py-12">
         <div
           aria-hidden="true"
-          className="absolute -left-16 top-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(70,217,255,0.26),transparent_70%)] blur-3xl"
+          className="absolute -left-16 top-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(41,87,255,0.3),transparent_70%)] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute right-[-4%] top-[10%] h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(138,109,255,0.28),transparent_72%)] blur-3xl [animation:float-gentle_12s_ease-in-out_infinite]"
+          className="absolute right-[-4%] top-[10%] h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.28),transparent_72%)] blur-3xl [animation:float-gentle_12s_ease-in-out_infinite]"
         />
         <div
           aria-hidden="true"
-          className="absolute bottom-[-10%] left-[38%] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(183,255,108,0.12),transparent_68%)] blur-3xl"
+          className="absolute bottom-[-10%] left-[38%] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(255,166,55,0.12),transparent_68%)] blur-3xl"
         />
         <div
           aria-hidden="true"
@@ -26,7 +26,7 @@ export function HeroSection() {
         />
         <div
           aria-hidden="true"
-          className="absolute left-[14%] top-[20%] h-2 w-2 rounded-full bg-[#7ce7ff] shadow-[0_0_18px_rgba(124,231,255,0.9)] [animation:pulse-soft_3.2s_ease-in-out_infinite]"
+          className="absolute left-[14%] top-[20%] h-2 w-2 rounded-full bg-[#ff9d0a] shadow-[0_0_18px_rgba(255,157,10,0.9)] [animation:pulse-soft_3.2s_ease-in-out_infinite]"
         />
         <div
           aria-hidden="true"
@@ -46,7 +46,7 @@ export function HeroSection() {
             <div className="fade-up space-y-5">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="eyebrow">个人简历 / 品牌首页</span>
-                <span className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[11px] font-medium tracking-[0.18em] text-muted uppercase">
+                <span className="rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/85 uppercase">
                   Design · Commerce · Process · AI
                 </span>
               </div>
@@ -58,15 +58,15 @@ export function HeroSection() {
 
                 <h1 className="font-display text-[clamp(3.2rem,9vw,7.4rem)] font-semibold leading-[0.94] text-balance">
                   <span className="block">把</span>
-                  <span className="block bg-[linear-gradient(135deg,#eff6ff_12%,#7ce7ff_52%,#6ba8ff_100%)] bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(107,168,255,0.28)]">
+                  <span className="block bg-[linear-gradient(135deg,#fff8ef_0%,#ffbf61_46%,#ff6a00_100%)] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,106,0,0.32)]">
                     视觉表达
                   </span>
-                  <span className="block bg-[linear-gradient(135deg,#f4f7ff_0%,#9c8cff_54%,#63d4ff_100%)] bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(138,109,255,0.32)]">
+                  <span className="block bg-[linear-gradient(135deg,#fff6eb_0%,#ff8f35_52%,#ff3d00_100%)] bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(255,92,0,0.34)]">
                     展示逻辑
                   </span>
                   <span className="block">
                     与{" "}
-                    <span className="bg-[linear-gradient(135deg,#e7ffca_0%,#63d4ff_38%,#8a6dff_100%)] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(99,212,255,0.24)]">
+                    <span className="bg-[linear-gradient(135deg,#fff9ee_0%,#ffcf6e_34%,#ff7a00_100%)] bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(255,166,55,0.28)]">
                       AI 实现
                     </span>
                   </span>
@@ -110,7 +110,7 @@ export function HeroSection() {
                   <p
                     className={`mt-3 font-display text-[1.8rem] font-semibold leading-none ${
                       index === 2
-                        ? "bg-[linear-gradient(135deg,#9de5ff_0%,#8a6dff_78%)] bg-clip-text text-transparent"
+                        ? "bg-[linear-gradient(135deg,#fff4dd_0%,#ff9d0a_78%)] bg-clip-text text-transparent"
                         : "text-white"
                     }`}
                   >
@@ -132,15 +132,15 @@ export function HeroSection() {
               />
               <div
                 aria-hidden="true"
-                className="absolute left-[10%] top-[12%] h-28 w-28 rounded-full border border-white/10 [animation:spin-slow_18s_linear_infinite]"
+                className="absolute left-[10%] top-[12%] h-28 w-28 rounded-full border border-white/8 [animation:spin-slow_18s_linear_infinite]"
               />
               <div
                 aria-hidden="true"
-                className="absolute left-[7%] top-[9%] h-40 w-40 rounded-full border border-white/6 [animation:spin-slow_26s_linear_infinite_reverse]"
+                className="absolute left-[7%] top-[9%] h-40 w-40 rounded-full border border-white/5 [animation:spin-slow_26s_linear_infinite_reverse]"
               />
               <div
                 aria-hidden="true"
-                className="absolute right-[12%] top-[18%] h-[4.5rem] w-[4.5rem] rounded-full border border-white/10"
+                className="absolute right-[12%] top-[18%] h-[4.5rem] w-[4.5rem] rounded-full border border-white/8"
               />
               <div
                 aria-hidden="true"
@@ -152,7 +152,7 @@ export function HeroSection() {
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-x-[18%] top-[18%] h-48 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.16),transparent_70%)] blur-3xl"
+                className="absolute inset-x-[18%] top-[16%] h-44 rounded-full bg-[radial-gradient(circle,rgba(255,206,122,0.28),transparent_72%)] blur-3xl"
               />
               <div
                 aria-hidden="true"
@@ -160,7 +160,7 @@ export function HeroSection() {
               />
               <div
                 aria-hidden="true"
-                className="absolute right-[24%] top-[30%] h-2 w-2 rounded-full bg-[#7ce7ff] shadow-[0_0_18px_rgba(124,231,255,0.9)] [animation:pulse-soft_3.6s_ease-in-out_infinite]"
+                className="absolute right-[24%] top-[30%] h-2 w-2 rounded-full bg-[#ffb23e] shadow-[0_0_18px_rgba(255,178,62,0.9)] [animation:pulse-soft_3.6s_ease-in-out_infinite]"
               />
               <div
                 aria-hidden="true"
@@ -168,11 +168,19 @@ export function HeroSection() {
               />
               <div
                 aria-hidden="true"
-                className="absolute bottom-[-4.5rem] left-1/2 h-72 w-56 -translate-x-1/2 rounded-[45%] bg-[linear-gradient(180deg,rgba(255,248,218,0.95),rgba(255,178,102,0.72)_36%,rgba(255,130,74,0.48)_74%,rgba(255,130,74,0.08)_100%)] shadow-[0_0_48px_rgba(255,170,92,0.22)] [animation:pulse-soft_8s_ease-in-out_infinite]"
+                className="absolute bottom-[1rem] left-1/2 h-[18.5rem] w-[18.5rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_50%_38%,rgba(255,189,86,1)_0%,rgba(255,130,22,0.98)_44%,rgba(255,93,0,0.96)_82%,rgba(255,80,0,0.88)_100%)] shadow-[0_0_70px_rgba(255,106,0,0.34)]"
               />
               <div
                 aria-hidden="true"
-                className="absolute bottom-[-2rem] left-1/2 h-56 w-40 -translate-x-1/2 rounded-[44%] bg-[radial-gradient(circle_at_top,rgba(255,247,219,0.55),rgba(255,192,116,0.18)_46%,transparent_76%)] blur-3xl [animation:pulse-soft_5.2s_ease-in-out_infinite]"
+                className="absolute bottom-[4rem] left-1/2 h-[13.5rem] w-[8.5rem] -translate-x-1/2 rounded-[46%] bg-[radial-gradient(circle_at_52%_18%,rgba(255,201,102,0.98),rgba(255,118,14,0.94)_48%,rgba(217,30,0,0.92)_86%,rgba(217,30,0,0.64)_100%)] shadow-[inset_-18px_-28px_36px_rgba(140,12,0,0.34),0_0_48px_rgba(255,128,32,0.3)]"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute bottom-[-3.5rem] left-1/2 h-36 w-[120%] -translate-x-1/2 rounded-t-[48%] bg-[linear-gradient(180deg,rgba(21,47,201,0.18),rgba(13,28,133,0.6)_42%,rgba(6,13,63,0.86)_100%)] blur-sm"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute bottom-[1.5rem] left-[18%] right-[18%] h-12 rounded-full bg-[radial-gradient(circle,rgba(22,18,46,0.46),transparent_70%)] blur-2xl"
               />
 
               <div className="relative flex h-full flex-col justify-between">
@@ -202,8 +210,8 @@ export function HeroSection() {
               <div data-tilt className="soft-card fade-up px-5 py-5 [animation-delay:220ms]">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#7ce7ff]/80 to-transparent"
-                />
+                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9d0a]/90 to-transparent"
+              />
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                   工作方式
                 </p>
@@ -222,8 +230,8 @@ export function HeroSection() {
               <div data-tilt className="soft-card fade-up px-5 py-5 [animation-delay:320ms]">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#a68cff]/80 to-transparent"
-                />
+                className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#ff6a00]/90 to-transparent"
+              />
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                   快速摘要
                 </p>

@@ -49,11 +49,11 @@ export function ContactSection() {
       <div className="surface overflow-hidden px-7 py-10 md:px-11 md:py-12">
         <div
           aria-hidden="true"
-          className="absolute right-[-4rem] top-[-5rem] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(70,217,255,0.16),transparent_72%)] blur-3xl"
+          className="absolute right-[-4rem] top-[-5rem] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.18),transparent_72%)] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute bottom-[-4rem] left-[20%] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(138,109,255,0.16),transparent_72%)] blur-3xl"
+          className="absolute bottom-[-4rem] left-[20%] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(41,87,255,0.18),transparent_72%)] blur-3xl"
         />
         <div
           aria-hidden="true"
@@ -88,7 +88,7 @@ export function ContactSection() {
           <aside data-tilt className="soft-card flex flex-col justify-between p-6 md:p-7">
             <div
               aria-hidden="true"
-              className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#7ce7ff]/90 to-transparent"
+              className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9d0a]/90 to-transparent"
             />
             <div
               aria-hidden="true"
@@ -96,7 +96,7 @@ export function ContactSection() {
             />
             <div
               aria-hidden="true"
-              className="absolute bottom-[-2rem] right-[12%] h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(124,231,255,0.18),transparent_72%)] blur-2xl"
+              className="absolute bottom-[-2rem] right-[12%] h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(255,166,55,0.2),transparent_72%)] blur-2xl"
             />
             <div
               aria-hidden="true"

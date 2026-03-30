@@ -45,15 +45,13 @@ export function ContactSection() {
   return (
     <section id="contact" className="section-shell pb-28 pt-20 md:pb-36 md:pt-24">
       <div className="relative overflow-visible px-2 md:px-4">
-        <div className="grid gap-12 xl:grid-cols-[minmax(0,0.76fr)_minmax(420px,1.24fr)] xl:items-end">
-          <div className="max-w-[30rem] space-y-6">
+        <div className="grid gap-10 xl:grid-cols-[minmax(0,0.82fr)_minmax(420px,1.04fr)] xl:items-center">
+          <div className="max-w-[26rem] space-y-6">
             <span className="eyebrow">联系方式</span>
-            <h2 className="font-display text-[clamp(3.4rem,8vw,6.4rem)] leading-[0.9] text-white">
-              继续
-              <br />
-              聊下去
+            <h2 className="font-display text-[clamp(2.3rem,5vw,4rem)] leading-[0.98] text-white">
+              继续聊下去
             </h2>
-            <p className="text-base leading-8 text-white/82 md:text-lg">
+            <p className="text-[0.95rem] leading-8 text-white/82 md:text-base">
               合作、工作机会，或者一起把一个想法做成真正能看的作品。
             </p>
 
@@ -71,25 +69,19 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="relative min-h-[28rem] md:min-h-[34rem] xl:min-h-[38rem]">
-            <div className="absolute right-[2%] bottom-[-2%] z-10">
+          <div className="relative min-h-[22rem] md:min-h-[26rem] xl:min-h-[29rem]">
+            <div className="absolute right-[12%] top-1 z-10">
               <BrandIp
                 size="lg"
                 showSatellites={false}
-                className="w-[17rem] sm:w-[21rem] xl:w-[26rem]"
+                className="w-[12rem] sm:w-[16rem] xl:w-[18rem]"
               />
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 xl:block">
-              {visibleItems.map((item, index) => {
-                const positions = [
-                  "xl:absolute xl:left-[0%] xl:top-[10%] xl:w-[16rem] xl:rotate-[-8deg] xl:rounded-[2rem_3rem_2rem_3rem]",
-                  "xl:absolute xl:right-[18%] xl:top-[2%] xl:w-[15rem] xl:rotate-[8deg] xl:rounded-[3rem_2rem_3rem_2rem]",
-                  "xl:absolute xl:left-[16%] xl:bottom-[8%] xl:w-[17rem] xl:rotate-[5deg] xl:rounded-[3rem_3rem_2rem_2rem]",
-                ];
-
+            <div className="absolute inset-x-0 bottom-0 grid gap-4 md:grid-cols-3">
+              {visibleItems.map((item) => {
                 return (
-                  <div key={item.label} className={positions[index] ?? ""}>
+                  <div key={item.label}>
                     <ContactLink label={item.label} value={item.value} href={item.href} />
                   </div>
                 );

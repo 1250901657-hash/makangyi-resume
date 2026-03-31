@@ -13,12 +13,12 @@ export function CoreShowcaseSection() {
     <section id="showcase" className="section-shell py-22 md:py-32">
       <div className="relative overflow-visible px-2 md:px-4">
         <div className="max-w-[24rem] space-y-4">
-          <span className="eyebrow">核心概览</span>
+          <span className="eyebrow">视觉概览</span>
           <h2 className="font-display text-[clamp(2.35rem,5vw,4.1rem)] leading-[0.98] text-white">
-            核心生态
+            角色先被看见
           </h2>
           <p className="max-w-sm text-[0.95rem] leading-8 text-white/80">
-            不把所有信息做成一样大的卡片，而是让主视觉和重点内容真正被看见。
+            再让文案、能力和项目顺着她的气质继续展开，整页就会更有记忆点。
           </p>
         </div>
 
@@ -31,9 +31,7 @@ export function CoreShowcaseSection() {
               <BrandIp size="md" showSatellites={false} className="w-[9rem]" />
             </div>
 
-            <p className="micro-label text-accent">
-              主案例 / 01
-            </p>
+            <p className="micro-label text-accent">主案例 / 01</p>
             <h3 className="mt-4 max-w-[22rem] font-display text-[clamp(1.85rem,3.4vw,3rem)] leading-[0.98] text-white">
               {projectPreview[0]?.name}
             </h3>
@@ -52,7 +50,7 @@ export function CoreShowcaseSection() {
           <article data-tilt className="soft-card overflow-hidden">
             <div className="divide-y divide-white/10">
               <div className="space-y-3 px-5 py-5">
-                <p className="micro-label text-accent">能力</p>
+                <p className="micro-label text-accent">能力重点</p>
                 <div className="flex flex-wrap gap-2">
                   {capabilityPreview.slice(0, 2).map((item) => (
                     <span key={item.title} className="meta-pill">
@@ -63,7 +61,7 @@ export function CoreShowcaseSection() {
               </div>
 
               <div className="space-y-3 px-5 py-5">
-                <p className="micro-label text-accent">阶段</p>
+                <p className="micro-label text-accent">搭建顺序</p>
                 <div className="space-y-2">
                   {journeyPreview.map((item) => (
                     <p key={item.phase} className="text-[0.82rem] leading-6 text-white/82">
@@ -85,7 +83,7 @@ export function CoreShowcaseSection() {
 
           <article data-tilt className="soft-card px-5 py-5 xl:col-span-2">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <p className="micro-label text-accent">工具</p>
+              <p className="micro-label text-accent">构成步骤</p>
               <div className="flex flex-wrap gap-2">
                 {siteContent.identity.workflow.slice(0, 3).map((item, index) => (
                   <span key={item} className="meta-pill">

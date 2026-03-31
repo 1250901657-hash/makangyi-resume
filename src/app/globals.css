@@ -4,21 +4,21 @@
 
 :root {
   color-scheme: dark;
-  --background: #071056;
-  --foreground: #fff7ef;
-  --muted: #d9dcff;
-  --accent: #ff6a00;
-  --accent-strong: #ff9d0a;
-  --surface: rgba(7, 18, 89, 0.78);
-  --surface-strong: rgba(8, 20, 104, 0.92);
-  --surface-stroke: rgba(255, 255, 255, 0.1);
+  --background: #0c1220;
+  --foreground: #f7f0e7;
+  --muted: #d7d0c4;
+  --accent: #d69a4d;
+  --accent-strong: #efc48c;
+  --surface: rgba(19, 26, 44, 0.82);
+  --surface-strong: rgba(17, 23, 39, 0.94);
+  --surface-stroke: rgba(255, 255, 255, 0.08);
   --panel-line: rgba(255, 255, 255, 0.08);
-  --panel-shadow: rgba(2, 6, 18, 0.52);
-  --panel-shadow-soft: rgba(2, 6, 18, 0.3);
-  --tone-cyan: #3164ff;
-  --tone-blue: #203dff;
-  --tone-violet: #ff7a00;
-  --tone-lime: #ffb23e;
+  --panel-shadow: rgba(3, 6, 14, 0.54);
+  --panel-shadow-soft: rgba(3, 6, 14, 0.28);
+  --tone-cyan: #6d87af;
+  --tone-blue: #40557e;
+  --tone-violet: #be8556;
+  --tone-lime: #cbb48d;
   --pointer-x: 50vw;
   --pointer-y: 24vh;
   --pointer-local-x: 50%;
@@ -59,10 +59,10 @@ body {
   text-rendering: optimizeLegibility;
   color: var(--foreground);
   background:
-    radial-gradient(circle at 76% 24%, rgba(255, 106, 0, 0.18), transparent 18%),
-    radial-gradient(circle at 18% 82%, rgba(41, 87, 255, 0.16), transparent 22%),
-    radial-gradient(circle at 86% 72%, rgba(255, 154, 10, 0.08), transparent 18%),
-    linear-gradient(150deg, #081a7c 0%, #071562 34%, #060f49 68%, #040820 100%);
+    radial-gradient(circle at 76% 18%, rgba(127, 152, 189, 0.16), transparent 22%),
+    radial-gradient(circle at 18% 82%, rgba(236, 197, 147, 0.14), transparent 20%),
+    radial-gradient(circle at 84% 72%, rgba(110, 137, 113, 0.12), transparent 18%),
+    linear-gradient(155deg, #162138 0%, #0f1628 42%, #090d17 100%);
 }
 
 body::before {
@@ -72,10 +72,10 @@ body::before {
   pointer-events: none;
   z-index: -2;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 54px 54px;
-  opacity: 0.28;
+    linear-gradient(to right, rgba(248, 234, 209, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(248, 234, 209, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.18;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.32));
   animation: grid-drift 34s linear infinite;
 }
@@ -87,17 +87,17 @@ body::after {
   pointer-events: none;
   z-index: -3;
   background:
-    radial-gradient(circle at 16% 24%, rgba(32, 61, 255, 0.2), transparent 22%),
-    radial-gradient(circle at 82% 18%, rgba(255, 106, 0, 0.22), transparent 28%),
-    radial-gradient(circle at 68% 56%, rgba(255, 154, 10, 0.12), transparent 20%),
-    radial-gradient(circle at 36% 88%, rgba(49, 100, 255, 0.08), transparent 18%);
+    radial-gradient(circle at 18% 24%, rgba(94, 116, 150, 0.18), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(236, 196, 140, 0.18), transparent 28%),
+    radial-gradient(circle at 68% 56%, rgba(122, 150, 116, 0.12), transparent 20%),
+    radial-gradient(circle at 36% 88%, rgba(190, 133, 86, 0.12), transparent 18%);
   filter: blur(72px);
   opacity: 0.95;
   animation: aura-shift 24s ease-in-out infinite;
 }
 
 ::selection {
-  background: rgba(255, 106, 0, 0.28);
+  background: rgba(214, 154, 77, 0.32);
   color: var(--foreground);
 }
 
@@ -139,9 +139,9 @@ body::after {
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255, 126, 24, 0.24), transparent 9%),
-      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255, 166, 55, 0.16), transparent 16%),
-      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(46, 92, 255, 0.12), transparent 22%);
+      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(236, 199, 148, 0.22), transparent 9%),
+      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(190, 133, 86, 0.12), transparent 16%),
+      radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(94, 116, 150, 0.12), transparent 22%);
     filter: blur(34px);
     opacity: 0.95;
     transition: opacity 180ms ease;
@@ -154,9 +154,9 @@ body::after {
     border: 1px solid var(--surface-stroke);
     border-radius: clamp(1.75rem, 2.2vw, 2.4rem);
     background:
-      radial-gradient(circle at var(--pointer-local-x, 50%) var(--pointer-local-y, 50%), rgba(255, 176, 84, 0.12), transparent 34%),
+      radial-gradient(circle at var(--pointer-local-x, 50%) var(--pointer-local-y, 50%), rgba(236, 196, 140, 0.12), transparent 34%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 28%),
-      linear-gradient(160deg, rgba(15, 30, 130, 0.94), rgba(7, 17, 76, 0.88));
+      linear-gradient(160deg, rgba(25, 34, 57, 0.94), rgba(12, 18, 32, 0.9));
     box-shadow:
       0 32px 90px var(--panel-shadow),
       0 14px 34px var(--panel-shadow-soft),
@@ -174,8 +174,8 @@ body::after {
     inset: 0;
     border-radius: inherit;
     background:
-      radial-gradient(circle at top right, rgba(255, 126, 24, 0.16), transparent 34%),
-      radial-gradient(circle at bottom left, rgba(46, 92, 255, 0.14), transparent 28%);
+      radial-gradient(circle at top right, rgba(236, 196, 140, 0.14), transparent 34%),
+      radial-gradient(circle at bottom left, rgba(94, 116, 150, 0.14), transparent 28%);
     pointer-events: none;
     z-index: -1;
   }
@@ -200,9 +200,9 @@ body::after {
     border-radius: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background:
-      radial-gradient(circle at var(--pointer-local-x, 50%) var(--pointer-local-y, 50%), rgba(255, 173, 88, 0.14), transparent 26%),
+      radial-gradient(circle at var(--pointer-local-x, 50%) var(--pointer-local-y, 50%), rgba(236, 196, 140, 0.14), transparent 26%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 32%),
-      rgba(7, 18, 89, 0.72);
+      rgba(15, 21, 37, 0.78);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.06),
       0 18px 34px rgba(1, 4, 15, 0.24);
@@ -220,7 +220,7 @@ body::after {
     height: 8rem;
     width: 8rem;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(255, 126, 24, 0.18), transparent 70%);
+    background: radial-gradient(circle, rgba(214, 154, 77, 0.18), transparent 70%);
     filter: blur(20px);
     pointer-events: none;
     animation: glow-float 10s ease-in-out infinite;
@@ -251,11 +251,11 @@ body::after {
 
   .soft-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 126, 24, 0.2);
+    border-color: rgba(214, 154, 77, 0.2);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       0 24px 44px rgba(1, 4, 15, 0.32),
-      0 0 30px rgba(255, 126, 24, 0.12);
+      0 0 30px rgba(214, 154, 77, 0.12);
   }
 
   [data-tilt] {
@@ -266,8 +266,8 @@ body::after {
   .eyebrow {
     @apply inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.16em];
     border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(10, 24, 112, 0.68);
-    color: #fff1df;
+    background: rgba(23, 31, 52, 0.72);
+    color: #f3e4cc;
     text-transform: uppercase;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(16px);
@@ -279,8 +279,8 @@ body::after {
     height: 0.35rem;
     width: 0.35rem;
     border-radius: 999px;
-    background: linear-gradient(135deg, #ffd06c, #ff6a00);
-    box-shadow: 0 0 10px rgba(255, 126, 24, 0.32);
+    background: linear-gradient(135deg, #f3d5a8, #c58e55);
+    box-shadow: 0 0 10px rgba(214, 154, 77, 0.24);
     flex: 0 0 auto;
   }
 
@@ -291,13 +291,13 @@ body::after {
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: linear-gradient(
       135deg,
-      rgba(255, 176, 68, 0.98),
-      rgba(255, 106, 0, 0.98) 46%,
-      rgba(255, 60, 0, 0.92)
+      rgba(244, 218, 179, 0.98),
+      rgba(214, 154, 77, 0.98) 48%,
+      rgba(167, 109, 56, 0.94)
     );
     box-shadow:
-      0 18px 40px rgba(255, 106, 0, 0.24),
-      0 0 34px rgba(255, 106, 0, 0.16),
+      0 18px 40px rgba(124, 82, 42, 0.28),
+      0 0 34px rgba(214, 154, 77, 0.12),
       0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     animation: button-glow 4.8s ease-in-out infinite;
   }
@@ -328,8 +328,8 @@ body::after {
   .btn-primary:hover {
     transform: translateY(-1px);
     box-shadow:
-      0 24px 46px rgba(255, 106, 0, 0.3),
-      0 0 28px rgba(255, 166, 55, 0.2),
+      0 24px 46px rgba(124, 82, 42, 0.34),
+      0 0 28px rgba(214, 154, 77, 0.16),
       0 0 0 1px rgba(255, 255, 255, 0.08) inset;
   }
 
@@ -338,7 +338,7 @@ body::after {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
-      rgba(9, 21, 96, 0.64);
+      rgba(17, 23, 39, 0.7);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.05),
       0 14px 30px rgba(1, 4, 15, 0.2);
@@ -348,12 +348,12 @@ body::after {
 
   .btn-secondary:hover {
     transform: translateY(-1px);
-    border-color: rgba(255, 126, 24, 0.28);
+    border-color: rgba(214, 154, 77, 0.28);
     color: white;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       0 18px 34px rgba(1, 4, 15, 0.24),
-      0 0 24px rgba(255, 126, 24, 0.12);
+      0 0 24px rgba(214, 154, 77, 0.12);
   }
 
   .font-display {
@@ -379,8 +379,8 @@ body::after {
   .meta-pill {
     @apply inline-flex items-center rounded-full px-3 py-1.5 text-[11px] font-medium;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 247, 239, 0.84);
+    background: rgba(255, 245, 233, 0.05);
+    color: rgba(247, 240, 231, 0.84);
     backdrop-filter: blur(14px);
   }
 
@@ -523,14 +523,14 @@ body::after {
   0%,
   100% {
     box-shadow:
-      0 18px 40px rgba(255, 106, 0, 0.24),
+      0 18px 40px rgba(124, 82, 42, 0.28),
       0 0 0 1px rgba(255, 255, 255, 0.04) inset;
   }
 
   50% {
     box-shadow:
-      0 24px 52px rgba(255, 106, 0, 0.38),
-      0 0 34px rgba(255, 176, 68, 0.28),
+      0 24px 52px rgba(124, 82, 42, 0.38),
+      0 0 34px rgba(214, 154, 77, 0.22),
       0 0 0 1px rgba(255, 255, 255, 0.07) inset;
   }
 }
@@ -560,7 +560,7 @@ body::after {
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       0 18px 34px rgba(1, 4, 15, 0.24),
-      0 0 22px rgba(255, 126, 24, 0.12);
+      0 0 22px rgba(214, 154, 77, 0.12);
   }
 }
 

@@ -21,7 +21,7 @@ export default function Home() {
             © 2026 {siteContent.identity.name}. Built with Next.js, TypeScript and Tailwind CSS.
           </p>
           <p>
-            这是一版在原有内容结构基础上重做视觉语言的深色个人品牌首页。
+            这是一版以复古肖像 IP 为主角重新塑形的个人品牌首页。
           </p>
         </div>
       </footer>

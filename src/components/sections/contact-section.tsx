@@ -51,15 +51,15 @@ export function ContactSection() {
           <div className="max-w-[26rem] space-y-6">
             <span className="eyebrow">联系方式</span>
             <h2 className="font-display text-[clamp(2.3rem,5vw,4rem)] leading-[0.98] text-white">
-              继续聊下去
+              如果你也想做一个有主角感的页面
             </h2>
             <p className="text-[0.95rem] leading-8 text-white/82 md:text-base">
-              合作、工作机会，或者一起把一个想法做成真正能看的作品。
+              欢迎找我一起把品牌、作品集或角色设定做成真正能被记住的首页。
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
               <a href={emailItem?.href ?? "#"} className="btn-primary">
-                发送邮件
+                发我邮件
               </a>
               <button
                 type="button"

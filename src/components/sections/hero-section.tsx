@@ -9,20 +9,20 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-[88rem] overflow-visible px-2 md:px-4 xl:px-6">
         <div
           aria-hidden="true"
-          className="absolute left-[4%] top-12 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(34,72,255,0.26),transparent_72%)] blur-3xl"
+          className="absolute left-[4%] top-12 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(244,208,154,0.3),transparent_72%)] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute right-[10%] top-[10%] h-60 w-60 rounded-full bg-[radial-gradient(circle,rgba(255,106,0,0.2),transparent_72%)] blur-3xl"
+          className="absolute right-[10%] top-[10%] h-60 w-60 rounded-full bg-[radial-gradient(circle,rgba(110,137,113,0.18),transparent_72%)] blur-3xl"
         />
 
         <div className="grid gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(420px,1.02fr)] xl:items-center">
           <div className="relative z-20 max-w-[31rem] space-y-7 pt-6 md:space-y-8 md:pt-10 xl:pt-12">
             <div className="space-y-5 fade-up">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="eyebrow">个人简历 / 品牌首页</span>
-                <span className="micro-label rounded-full border border-white/10 bg-[#0f2b96]/60 px-3.5 py-1.5 text-white/78">
-                  AI Visual Ecosystem
+                <span className="eyebrow">角色主页 / 视觉实验</span>
+                <span className="micro-label rounded-full border border-white/10 bg-[rgba(31,43,71,0.7)] px-3.5 py-1.5 text-white/78">
+                  Portrait-led Narrative
                 </span>
               </div>
 
@@ -33,12 +33,12 @@ export function HeroSection() {
 
                 <h1 className="font-display text-[clamp(2.35rem,5.2vw,4.1rem)] leading-[1.02] text-balance">
                   <span className="block text-white">
-                    把
-                    <span className="bg-[linear-gradient(135deg,#fff8ef_0%,#ffc96f_42%,#ff6a00_100%)] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,106,0,0.3)]">
-                      设计感
+                    让一位主角
+                    <span className="bg-[linear-gradient(135deg,#fff8ef_0%,#f3d6ac_38%,#c28e57_100%)] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(214,154,77,0.28)]">
+                      带出整页
                     </span>
                   </span>
-                  <span className="block text-white">做得更有重量</span>
+                  <span className="block text-white">最先被记住的气质</span>
                 </h1>
               </div>
 
@@ -49,7 +49,7 @@ export function HeroSection() {
 
             <div className="fade-up flex flex-wrap gap-3 [animation-delay:120ms]">
               <a href="#showcase" className="btn-primary">
-                看核心生态
+                看视觉概览
               </a>
               <a href="#contact" className="btn-secondary">
                 联系我
@@ -59,9 +59,7 @@ export function HeroSection() {
             <div className="fade-up grid gap-0 overflow-hidden rounded-[1.45rem] border border-white/10 bg-white/[0.03] sm:grid-cols-3 sm:divide-x sm:divide-white/10 [animation-delay:220ms]">
               {identity.quickStats.map((item) => (
                 <div key={item.label} className="space-y-1 px-4 py-4 sm:px-5 sm:py-5">
-                  <p className="micro-label text-white/46">
-                    {item.label}
-                  </p>
+                  <p className="micro-label text-white/46">{item.label}</p>
                   <p className="text-[0.95rem] font-medium tracking-[0.02em] text-white/88">{item.value}</p>
                 </div>
               ))}
@@ -78,13 +76,13 @@ export function HeroSection() {
                 <div className="grid sm:grid-cols-3 sm:divide-x sm:divide-white/10">
                   <div className="space-y-2 px-4 py-4 sm:px-5 sm:py-5">
                     <p className="micro-label text-accent">当前方向</p>
-                    <p className="text-[0.9rem] leading-7 text-white/84">AI 网页 / 内容制作</p>
+                    <p className="text-[0.9rem] leading-7 text-white/84">IP 叙事 / 网页视觉</p>
                   </div>
 
                   <div className="space-y-2 border-t border-white/10 px-4 py-4 sm:border-t-0 sm:px-5 sm:py-5">
                     <p className="micro-label text-accent">核心词</p>
                     <p className="text-[0.9rem] leading-7 tracking-[0.06em] text-white/84">
-                      审美 · 结构
+                      复古 · 花园 · 肖像
                     </p>
                   </div>
 

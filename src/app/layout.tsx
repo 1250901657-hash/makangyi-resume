@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: siteContent.seo.title,
     description: siteContent.seo.description,
     url: siteContent.seo.url,
-    siteName: "马康谊在线简历",
+    siteName: "马康谊角色叙事网页",
     locale: "zh_CN",
     type: "website",
   },

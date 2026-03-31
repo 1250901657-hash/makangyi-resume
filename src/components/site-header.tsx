@@ -3,7 +3,7 @@ import { siteContent } from "@/data/site-content";
 
 const compactNavigation = [
   { href: "#top", label: "首页" },
-  { href: "#showcase", label: "核心概览" },
+  { href: "#showcase", label: "视觉概览" },
   { href: "#contact", label: "联系" },
 ];
 
@@ -38,7 +38,7 @@ export function SiteHeader() {
             </nav>
 
             <a href="#contact" className="btn-primary px-4 py-2.5 text-[13px]">
-              联系我
+              来聊聊
             </a>
           </div>
         </div>

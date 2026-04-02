@@ -19,6 +19,21 @@ npm run dev
 
 打开 `http://localhost:3000` 查看页面。
 
+如果你想使用聊天生成网页的工作台，还需要创建 `.env.local`：
+
+```bash
+cp .env.example .env.local
+```
+
+然后填写：
+
+```bash
+ANTHROPIC_API_KEY=your_anthropic_api_key
+ANTHROPIC_MODEL=claude-sonnet-4-20250514
+```
+
+启动后访问 `http://localhost:3000/studio`。
+
 ## 生产构建
 
 ```bash

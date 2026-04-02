@@ -4,6 +4,7 @@ import { siteContent } from "@/data/site-content";
 const compactNavigation = [
   { href: "#top", label: "首页" },
   { href: "#showcase", label: "视觉概览" },
+  { href: "/studio", label: "AI 生成器" },
   { href: "#contact", label: "联系" },
 ];
 
